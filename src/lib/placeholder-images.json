@@ -1,0 +1,94 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "Students collaborating on a project on campus",
+      "imageUrl": "https://images.unsplash.com/photo-1577985043696-8bd54d9f093f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBsaWZlfGVufDB8fHx8MTc2ODc1NDQ3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "campus life"
+    },
+    {
+      "id": "hero-2",
+      "description": "Close-up of a circuit board representing technology",
+      "imageUrl": "https://images.unsplash.com/photo-1643732774973-ff2d0e610d7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWNobm9sb2d5JTIwY2lyY3VpdHxlbnwwfHx8fDE3Njg3MjkyODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "technology circuit"
+    },
+    {
+      "id": "hero-3",
+      "description": "Students playing basketball on an outdoor court",
+      "imageUrl": "https://images.unsplash.com/photo-1475116730596-402cbd4ff6c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb2xsZWdlJTIwc3BvcnRzfGVufDB8fHx8MTc2ODc1NDQ3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "college sports"
+    },
+    {
+      "id": "hero-4",
+      "description": "A debating competition in a university hall",
+      "imageUrl": "https://images.unsplash.com/photo-1660351174962-e2a1fbb9af09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdHVkZW50JTIwZGViYXRlfGVufDB8fHx8MTc2ODc1NDQ3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "student debate"
+    },
+    {
+      "id": "hero-5",
+      "description": "Student studying in a library for a competitive exam",
+      "imageUrl": "https://images.unsplash.com/photo-1758685848122-64a287c1abde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxleGFtJTIwcHJlcGFyYXRpb258ZW58MHx8fHwxNzY4NzA4OTAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "exam preparation"
+    },
+    {
+      "id": "news-sports",
+      "description": "University soccer team celebrating a goal",
+      "imageUrl": "https://images.unsplash.com/photo-1522947961977-67fe74257c16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb2xsZWdlJTIwc29jY2VyfGVufDB8fHx8MTc2ODc1NDQ3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "college soccer"
+    },
+    {
+      "id": "news-politics",
+      "description": "Student government election campaign poster",
+      "imageUrl": "https://images.unsplash.com/photo-1758610840977-8ee55513281c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwZWxlY3Rpb258ZW58MHx8fHwxNzY4NzU0NDc3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "student election"
+    },
+    {
+      "id": "news-tech",
+      "description": "Students in a robotics lab",
+      "imageUrl": "https://images.unsplash.com/photo-1627817471035-3333a9ece240?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxyb2JvdGljcyUyMGxhYnxlbnwwfHx8fDE3Njg3NTQ0Nzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "robotics lab"
+    },
+    {
+      "id": "news-education",
+      "description": "A professor giving a lecture in a large hall",
+      "imageUrl": "https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx1bml2ZXJzaXR5JTIwbGVjdHVyZXxlbnwwfHx8fDE3Njg2NDAxOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university lecture"
+    },
+    {
+      "id": "news-world",
+      "description": "A globe on a desk with books",
+      "imageUrl": "https://images.unsplash.com/photo-1759823420520-546e46818322?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxnbG9iYWwlMjBzdHVkaWVzfGVufDB8fHx8MTc2ODc1NDQ3OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "global studies"
+    },
+    {
+      "id": "news-national",
+      "description": "A national landmark with students in front",
+      "imageUrl": "https://images.unsplash.com/photo-1634913336493-6600bcb95443?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxuYXRpb25hbCUyMG1vbnVtZW50fGVufDB8fHx8MTc2ODc1NDQ3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "national monument"
+    },
+    {
+      "id": "competition-hackathon",
+      "description": "Students collaborating at a hackathon event",
+      "imageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYWNrYXRob258ZW58MHx8fHwxNzY4OTk0ODgxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hackathon event"
+    },
+    {
+      "id": "competition-coding",
+      "description": "A person coding on a laptop in a competitive setting",
+      "imageUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2Rpbmd8ZW58MHx8fHwxNzY4OTk0OTIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coding competition"
+    },
+    {
+      "id": "competition-scholarship",
+      "description": "A student receiving a scholarship award certificate",
+      "imageUrl": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzY2hvbGFyc2hpcCUyMGF3YXJkfGVufDB8fHx8MTc2ODk5NDk2MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "scholarship award"
+    },
+    {
+      "id": "competition-exam",
+      "description": "Students writing an important entrance examination in a hall",
+      "imageUrl": "https://images.unsplash.com/photo-1509062522246-3755977927d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleGFtaW5hdGlvbiUyMGhhbGx8ZW58MHx8fHwxNzY4OTk1MDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "examination hall"
+    }
+  ]
+}
