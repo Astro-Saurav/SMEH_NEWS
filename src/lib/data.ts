@@ -1,129 +1,128 @@
 import type { NewsCardProps } from '@/components/site/news-card';
 import type { VideoCardProps } from '@/components/site/video-card';
 import type { MaterialCardProps } from '@/components/site/material-card';
-import type { CompetitionCardProps } from '@/components/site/competition-card';
 
-export const newsItems: NewsCardProps[] = [
+export const studentProjects: NewsCardProps[] = [
   {
-    id: '1',
-    category: 'Sports',
-    headline: 'University Eagles Win National Championship',
-    description: 'A stunning victory for the university\'s basketball team in the final seconds of the game.',
-    image: 'https://picsum.photos/seed/news1/600/400',
-    imageHint: 'college basketball',
-    link: '#',
-  },
-  {
-    id: '2',
-    category: 'Technology',
-    headline: 'New AI Research Lab Opens on Campus',
-    description: 'The new state-of-the-art facility will focus on machine learning and robotics.',
-    image: 'https://picsum.photos/seed/news3/600/400',
-    imageHint: 'robotics lab',
-    link: '#',
+    id: 'proj1',
+    category: 'Audio-Visual',
+    headline: 'Documentary: The Lifeline of a City',
+    description: 'A short documentary exploring the daily lives of commuters on the city\'s metro.',
+    image: 'https://picsum.photos/seed/project1/600/400',
+    imageHint: 'documentary film',
+    link: '/student-projects/audio-visual',
   },
   {
-    id: '3',
-    category: 'Education',
-    headline: 'Revised Curriculum for Engineering Students',
-    description: 'The engineering department introduces a new curriculum to meet industry demands.',
-    image: 'https://picsum.photos/seed/news4/600/400',
-    imageHint: 'engineering student',
-    link: '#',
+    id: 'proj2',
+    category: 'Web Stories',
+    headline: 'Interactive Report: The Urban Heat Island Effect',
+    description: 'An in-depth multimedia article about the rising temperatures in urban centers.',
+    image: 'https://picsum.photos/seed/project2/600/400',
+    imageHint: 'city journalism',
+    link: '/student-projects/web-journalism',
+  },
+  {
+    id: 'proj3',
+    category: 'News Letter',
+    headline: 'Campus Chronicle: The Anniversary Edition',
+    description: 'A special edition newspaper celebrating 25 years of the university.',
+    image: 'https://picsum.photos/seed/project3/600/400',
+    imageHint: 'print newspaper',
+    link: '/student-projects/print-media',
   },
     {
-    id: '4',
-    category: 'Politics',
-    headline: 'Student Body Elections See Record Turnout',
-    description: 'This year\'s student government elections have seen the highest voter participation in a decade.',
-    image: 'https://picsum.photos/seed/news2/600/400',
-    imageHint: 'student election',
-    link: '#',
+    id: 'proj4',
+    category: 'Audio Podcasts',
+      headline: 'Podcast: "Tech Talks" - Technology in Everyday Life',
+      description: 'An interview with a leading researcher on the future of digital innovation.',
+    image: 'https://picsum.photos/seed/project4/600/400',
+    imageHint: 'podcast microphone',
+    link: '/student-projects/audio-podcasts',
   },
     {
-    id: '5',
-    category: 'World & National',
-    headline: 'Students Participate in National Climate Summit',
-    description: 'A delegation of students represented the university at the annual climate change summit.',
-    image: 'https://picsum.photos/seed/news5/600/400',
-    imageHint: 'climate summit',
-    link: '#',
+    id: 'proj5',
+    category: 'Campaigns',
+    headline: 'Campaign: "Green Campus" Initiative',
+    description: 'A comprehensive PR campaign to promote sustainability on campus.',
+    image: 'https://picsum.photos/seed/project5/600/400',
+    imageHint: 'green campus',
+    link: '/student-projects/pr-advertising',
   },
     {
-    id: '6',
-    category: 'Campus Life',
-    headline: 'Annual Cultural Fest "Vibrations" a Grand Success',
-    description: 'The three-day cultural extravaganza featured over 50 events and thousands of participants.',
-    image: 'https://picsum.photos/seed/news6/600/400',
-    imageHint: 'cultural festival',
-    link: '#',
+    id: 'proj6',
+    category: 'Audio-Visual',
+    headline: 'Short Film: "Crossroads"',
+    description: 'A narrative short film about a life-changing decision made by a young student.',
+    image: 'https://picsum.photos/seed/project6/600/400',
+    imageHint: 'short film production',
+    link: '/student-projects/audio-visual',
   },
 ];
 
-export const lectureItems: VideoCardProps[] = [
+export const documentaryAndShortFilms: VideoCardProps[] = [
   {
     id: '1',
-    title: 'Introduction to Python for Beginners',
-    subject: 'Programming',
+    title: 'The Silent Guardians of the Himalayas',
+    subject: 'Documentary',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnailUrl: 'https://picsum.photos/seed/lecture1/400/225',
-    imageHint: 'python code'
+    thumbnailUrl: 'https://picsum.photos/seed/doc1/400/225',
+    imageHint: 'himalayas mountain'
   },
   {
     id: '2',
-    title: 'Fundamentals of Mechanical Engineering',
-    subject: 'Engineering',
+    title: 'Short Film: "The Last Letter"',
+    subject: 'Short Film',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnailUrl: 'https://picsum.photos/seed/lecture2/400/225',
-    imageHint: 'mechanical gear'
+    thumbnailUrl: 'https://picsum.photos/seed/doc2/400/225',
+    imageHint: 'old letter'
   },
   {
     id: '3',
-    title: 'Quantum Physics Explained Simply',
-    subject: 'Science',
+    title: 'Beneath the Waves: A Coral Reef Story',
+    subject: 'Documentary',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnailUrl: 'https://picsum.photos/seed/lecture3/400/225',
-    imageHint: 'atom model'
+    thumbnailUrl: 'https://picsum.photos/seed/doc3/400/225',
+    imageHint: 'coral reef'
   },
   {
     id: '4',
-    title: 'Strategies for Competitive Exam Success',
-    subject: 'Competitive Exams',
+    title: 'PSA: The Importance of Digital Literacy',
+    subject: 'Public Service Video',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnailUrl: 'https://picsum.photos/seed/lecture4/400/225',
-    imageHint: 'exam paper'
+    thumbnailUrl: 'https://picsum.photos/seed/doc4/400/225',
+    imageHint: 'digital literacy'
   },
   {
     id: '5',
-    title: 'Modern World History: A Primer',
-    subject: 'General Studies',
+    title: 'Interview with a War Veteran',
+    subject: 'Interview',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnailUrl: 'https://picsum.photos/seed/lecture5/400/225',
-    imageHint: 'history map'
+    thumbnailUrl: 'https://picsum.photos/seed/doc5/400/225',
+    imageHint: 'war veteran'
   },
   {
     id: '6',
-    title: 'Data Structures and Algorithms',
-    subject: 'Programming',
+    title: 'Short Film: "Echoes in the Hallway"',
+    subject: 'Short Film',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnailUrl: 'https://picsum.photos/seed/lecture6/400/225',
-    imageHint: 'binary tree'
+    thumbnailUrl: 'https://picsum.photos/seed/doc6/400/225',
+    imageHint: 'empty hallway'
   },
   {
     id: '7',
-    title: 'Basics of Electrical Circuits',
-    subject: 'Engineering',
+    title: 'The Art of Street Food: A Culinary Journey',
+    subject: 'Documentary',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnailUrl: 'https://picsum.photos/seed/lecture7/400/225',
-    imageHint: 'circuit board'
+    thumbnailUrl: 'https://picsum.photos/seed/doc7/400/225',
+    imageHint: 'street food'
   },
     {
     id: '8',
-    title: 'Advanced Calculus for Engineers',
-    subject: 'Science',
+    title: 'News Package: Local Elections 2024',
+    subject: 'News Package',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnailUrl: 'https://picsum.photos/seed/lecture8/400/225',
-    imageHint: 'math formula'
+    thumbnailUrl: 'https://picsum.photos/seed/doc8/400/225',
+    imageHint: 'election day'
   },
 ];
 
@@ -172,7 +171,7 @@ export const studyMaterials: MaterialCardProps[] = [
   },
 ];
 
-export const competitions: CompetitionCardProps[] = [
+export const competitions: { id: string; name: string; organizer: string; deadline: string; eligibility: string; link: string; }[] = [
   {
     id: '1',
     name: 'Innovate India Hackathon 2024',

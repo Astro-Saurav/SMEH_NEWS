@@ -27,7 +27,6 @@ export default function NewsCard({ category, headline, description, image, image
             alt={headline}
             fill
             className="object-cover"
-            data-ai-hint={imageHint}
           />
         </div>
         <div className="flex-grow p-6">

@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { LenisScroller } from '@/components/lenis-scroller';
 
 export const metadata: Metadata = {
-  title: 'SMEH – Manav Rachna',
+  title: 'SMeH – Manav Rachna',
   description: 'News, Learning & Opportunities for Every Student',
 };
 
@@ -33,7 +33,7 @@ export default function RootLayout({
         >
           <LenisScroller>
             <SiteHeader />
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow pt-20">{children}</main>
             <SiteFooter />
           </LenisScroller>
           <Toaster />

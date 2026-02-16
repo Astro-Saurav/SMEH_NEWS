@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from 'react';
 import { Grid2x2Plus as Grid2x2PlusIcon, Menu as MenuIcon } from 'lucide-react';
@@ -35,7 +35,7 @@ export function FloatingHeader() {
 			<nav className="mx-auto flex items-center justify-between p-1.5">
 				<div className="hover:bg-accent flex cursor-pointer items-center gap-2 rounded-md px-2 py-1 duration-100">
 					<Grid2x2PlusIcon className="size-5" />
-					<p className="font-mono text-base font-bold">Asme</p>
+					<p className="font-mono text-base font-bold">SMeH</p>
 				</div>
 				<div className="hidden items-center gap-1 lg:flex">
 					{links.map((link) => (

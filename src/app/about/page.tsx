@@ -1,91 +1,77 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Eye, Goal, Users } from 'lucide-react';
-import Image from 'next/image';
+'use client';
+
+import React from 'react';
+
+const YouTubeVideo = () => {
+  const videoId = 'CV08TgRVNT8';
+  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&end=34`;
+
+  return (
+    <iframe
+      className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2"
+      style={{ minWidth: '177.77vh', minHeight: '100vw' }} // Maintain 16:9 aspect ratio
+      src={embedUrl}
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  );
+};
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-      <section className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline text-primary">
-          About SMEH – Manav Rachna
-        </h1>
-        <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-          Your centralized digital hub for news, learning, and opportunities.
-        </p>
-      </section>
+    <>
+      <div className="fixed top-0 left-0 w-full h-full -z-20 overflow-hidden">
+        <YouTubeVideo />
+      </div>
+      <div className="fixed top-0 left-0 w-full h-full bg-black/60 -z-10" />
 
-      <section className="mt-16 grid md:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
-          <h2 className="text-3xl font-bold font-headline">
-            What is SMEH – Manav Rachna?
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            SMEH – Manav Rachna is a comprehensive digital platform designed exclusively for college students. We understand the fast-paced and dynamic nature of student life, and our goal is to streamline access to crucial information. From the latest campus news and global events to high-quality lecture series and study materials, we bring everything you need to succeed into one accessible place.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            Our platform also serves as a gateway to a world of opportunities, including hackathons, coding contests, scholarships, and competitive exams. We believe in empowering students by providing them with the tools and information necessary to excel both academically and professionally.
-          </p>
-        </div>
-        <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl">
-           <Image src="https://picsum.photos/seed/about1/800/600" alt="Students collaborating" layout="fill" objectFit="cover" data-ai-hint="student collaboration" />
-        </div>
-      </section>
+      <div className="relative z-10 text-white">
+        {/* Hero Section */}
+        <section>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary">
+              About SMeH
+            </h1>
+          </div>
+        </section>
 
-      <section className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card className="hover:shadow-lg transition-shadow duration-300">
-          <CardHeader className="flex flex-row items-center gap-4">
-            <div className="bg-primary/10 p-3 rounded-full">
-              <Goal className="w-6 h-6 text-primary" />
+        {/* Main Content */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
+          <div className="max-w-4xl mx-auto bg-black/30 backdrop-blur-sm p-8 rounded-lg shadow-lg">
+            <div className="space-y-6 text-lg text-gray-200 leading-relaxed">
+              <p>
+                The School of Media and Humanities (SMeH) at Manav Rachna International Institute of
+                Research and Studies (MRIIRS) is a dynamic academic unit committed to excellence in media
+                education, research, and industry engagement. The Department of Journalism and Mass
+                Communication under SMeH aims to nurture skilled media professionals equipped with critical
+                thinking, ethical grounding, and practical expertise to meet the evolving demands of the media
+                and communication industry.
+              </p>
+              <p>
+                The department offers a comprehensive curriculum that blends theoretical foundations with
+                hands-on training in journalism, digital media, advertising, public relations, film and television
+                production, photography, podcasting, and multimedia storytelling. Emphasis is placed on
+                experiential learning through studio-based practice, fieldwork, live projects, internships,
+                industrial visits, and collaborations with leading media organizations.
+              </p>
+              <p>
+                SMeH is supported by state-of-the-art infrastructure, including newsrooms, audio-visual studios,
+                editing suites, photography labs, and digital media facilities that simulate real-world professional
+                environments. The department actively promotes innovation, creativity, and research through
+                seminars, workshops, guest lectures, media conclaves, and faculty-student research initiatives.
+              </p>
+              <p>
+                With a strong focus on industry integration, ethical journalism, and emerging media
+                technologies, the Department of Journalism and Mass Communication at SMeH, MRIIRS strives
+                to develop socially responsible communicators, storytellers, and media leaders who can
+                contribute meaningfully to society and the global media landscape.
+              </p>
             </div>
-            <CardTitle className="font-headline">Our Mission</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">
-              To create a unified and efficient digital ecosystem that empowers every student with easy access to news, high-quality learning resources, and career-defining opportunities, fostering a community of informed, skilled, and successful individuals.
-            </p>
-          </CardContent>
-        </Card>
-        <Card className="hover:shadow-lg transition-shadow duration-300">
-          <CardHeader className="flex flex-row items-center gap-4">
-            <div className="bg-primary/10 p-3 rounded-full">
-              <Eye className="w-6 h-6 text-primary" />
-            </div>
-            <CardTitle className="font-headline">Our Vision</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">
-              To be the indispensable digital companion for every student, transforming the way they consume information, learn new skills, and discover opportunities, ultimately helping them achieve their full potential.
-            </p>
-          </CardContent>
-        </Card>
-      </section>
-
-       <section className="mt-20 text-center">
-        <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
-          <Users className="w-8 h-8 text-primary" />
-        </div>
-        <h2 className="text-3xl font-bold font-headline">
-          How This Platform Helps Students
-        </h2>
-        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-          We bridge the information gap, helping you stay ahead in your academic and professional journey.
-        </p>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-          <div className="p-6 border rounded-lg bg-card">
-            <h3 className="font-bold text-lg mb-2">Stay Informed</h3>
-            <p className="text-sm text-muted-foreground">Aggregated news from sports, politics, tech, and more, so you never miss an important update.</p>
-          </div>
-          <div className="p-6 border rounded-lg bg-card">
-            <h3 className="font-bold text-lg mb-2">Learn & Grow</h3>
-            <p className="text-sm text-muted-foreground">Access curated lectures, notes, and study materials across various subjects to supplement your learning.</p>
-          </div>
-          <div className="p-6 border rounded-lg bg-card">
-            <h3 className="font-bold text-lg mb-2">Seize Opportunities</h3>
-            <p className="text-sm text-muted-foreground">Discover competitions, scholarships, and exams relevant to you, with all details in one place.</p>
           </div>
         </div>
-      </section>
-
-    </div>
+      </div>
+    </>
   );
 }

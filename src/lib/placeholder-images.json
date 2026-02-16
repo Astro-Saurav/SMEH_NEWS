@@ -2,21 +2,21 @@
   "placeholderImages": [
     {
       "id": "hero-1",
-      "description": "Students collaborating on a project on campus",
-      "imageUrl": "https://images.unsplash.com/photo-1577985043696-8bd54d9f093f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYW1wdXMlMjBsaWZlfGVufDB8fHx8MTc2ODc1NDQ3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "campus life"
+      "description": "Manav Rachna campus view",
+      "imageUrl": "https://manavrachna.edu.in/uploads/home/banner_images/654dcb78d530b1699597176.webp",
+      "imageHint": "campus view"
     },
     {
       "id": "hero-2",
-      "description": "Close-up of a circuit board representing technology",
-      "imageUrl": "https://images.unsplash.com/photo-1643732774973-ff2d0e610d7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx0ZWNobm9sb2d5JTIwY2lyY3VpdHxlbnwwfHx8fDE3Njg3MjkyODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "technology circuit"
+      "description": "Students at Manav Rachna event",
+      "imageUrl": "https://manavrachna.edu.in/uploads/home/banner_images/654dcb98c06271699597208.webp",
+      "imageHint": "student event"
     },
     {
       "id": "hero-3",
-      "description": "Students playing basketball on an outdoor court",
-      "imageUrl": "https://images.unsplash.com/photo-1475116730596-402cbd4ff6c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb2xsZWdlJTIwc3BvcnRzfGVufDB8fHx8MTc2ODc1NDQ3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "college sports"
+      "description": "Manav Rachna campus building",
+      "imageUrl": "https://manavrachna.edu.in/uploads/home/banner_images/654dcb8dd3cd61699597197.webp",
+      "imageHint": "campus building"
     },
     {
       "id": "hero-4",
