@@ -12,7 +12,7 @@ export function SiteFooter() {
             <p className="text-sm font-bold font-headline">SMEH – Manav Rachna</p>
           </div>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} SMEH. All rights reserved.
+            © {new Date().getFullYear()} Created By Saurav Kumar [SCA] and Aditya Tripathi [SET]
           </p>
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="icon" asChild>
