@@ -2,10 +2,6 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { BackgroundGradient } from '@/components/ui/background-gradient';
 
 export type NewsCardProps = {
   id: string;
@@ -17,31 +13,28 @@ export type NewsCardProps = {
   link: string;
 };
 
-export default function NewsCard({ category, headline, description, image, imageHint, link }: NewsCardProps) {
+export default function NewsCard({ category, headline, description, image, link }: NewsCardProps) {
   return (
-    <BackgroundGradient containerClassName="h-full rounded-3xl" className="p-0 rounded-[22px] overflow-hidden h-full">
-      <div className="bg-card text-card-foreground flex flex-col h-full">
-        <div className="relative w-full h-48">
-          <Image
-            src={image}
-            alt={headline}
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="flex-grow p-6">
-          <Badge variant="secondary" className="mb-2">{category}</Badge>
-          <h3 className="font-headline text-lg mb-2 leading-tight">{headline}</h3>
-          <p className="text-sm text-muted-foreground line-clamp-3">{description}</p>
-        </div>
-        <div className="p-6 pt-0">
-          <Button asChild variant="outline" className="w-full">
-            <Link href={link}>
-              Read More <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
+    <Link href={link} className="group flex flex-col gap-4 border-b border-border pb-6">
+      <div className="relative w-full aspect-[16/9] overflow-hidden">
+        <Image
+          src={image}
+          alt={headline}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
       </div>
-    </BackgroundGradient>
+      <div>
+        <span className="text-primary font-bold text-[10px] uppercase tracking-widest mb-3 block border-y border-border py-1 inline-block">
+          {category}
+        </span>
+        <h3 className="font-headline text-xl lg:text-2xl font-black leading-tight mb-2 text-foreground group-hover:underline decoration-1 underline-offset-4">
+          {headline}
+        </h3>
+        <p className="text-muted-foreground text-sm line-clamp-3 font-medium">
+          {description}
+        </p>
+      </div>
+    </Link>
   );
 }

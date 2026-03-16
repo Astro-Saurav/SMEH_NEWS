@@ -346,8 +346,10 @@ const PixelCanvas = React.forwardRef<HTMLDivElement, PixelCanvasProps>(
       }
     }, [])
 
+    const PixelCanvasCustomElement = "pixel-canvas" as any;
+
     return (
-      <pixel-canvas
+      <PixelCanvasCustomElement
         ref={ref}
         data-gap={gap}
         data-speed={speed}
