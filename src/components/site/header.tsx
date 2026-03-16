@@ -4,7 +4,6 @@
 import { NavBar } from "@/components/ui/tubelight-navbar";
 import {
   Home,
-  Info,
   Briefcase,
   GalleryVertical,
   Mail,
@@ -14,7 +13,6 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -32,35 +30,19 @@ import {
 } from "@/components/ui/accordion";
 
 export function SiteHeader() {
-  const pathname = usePathname();
-  const isAboutPage = pathname === "/about";
-
   const navItems = [
     { name: "Home", url: "/", icon: Home },
     {
-      name: "About",
-      url: "/about",
-      icon: Info,
-      subItems: [
-        { name: "About SMeH", url: "/about" },
-        { name: "Dean's Message", url: "/dean-message" },
-        {
-          name: "Faculty Mentors",
-          url: "https://manavrachna.edu.in/mriirs/school-of-media-studies-humanities/faculty/teaching-faculty",
-          external: true,
-        },
-      ],
-    },
-    {
-      name: "Projects",
+      name: "Explore",
       url: "/student-projects",
       icon: Briefcase,
       subItems: [
-        { name: "Audio-Visual", url: "/student-projects/audio-visual" },
-        { name: "Web Stories", url: "/student-projects/web-journalism" },
-        { name: "News Letter", url: "/student-projects/print-media" },
-        { name: "Audio Podcasts", url: "/student-projects/audio-podcasts" },
-        { name: "Campaigns", url: "/student-projects/pr-advertising" },
+        { name: "Campus Buzz", url: "/student-projects/print-media" },
+        { name: "Social Buzz", url: "/student-projects/web-journalism" },
+        { name: "Podcast", url: "/student-projects/audio-podcasts" },
+        { name: "Manav Rachna TV", url: "/student-projects/audio-visual" },
+        { name: "Webstories", url: "/student-projects/webstories" },
+        { name: "Campaign", url: "/student-projects/pr-advertising" },
       ],
     },
     { name: "Achievements", url: "/achievements", icon: Trophy },
@@ -72,20 +54,17 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-colors duration-300",
-        isAboutPage
-          ? "bg-black/20 backdrop-blur-sm"
-          : "border-b border-border/40 bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur-sm"
+        "fixed top-0 left-0 right-0 z-50 transition-colors duration-300 border-b border-border/40 bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur-sm"
       )}
     >
-      <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex h-24 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="https://manavrachna.edu.in/uploads/school/658c196f918591703680367.webp"
-            alt="SMeH Logo"
-            width={168}
-            height={79}
-            className="h-12 w-auto"
+            src="/logo.jpeg"
+            alt="Manav Rachna Times Logo"
+            width={300}
+            height={142}
+            className="h-16 w-auto"
           />
         </Link>
 
@@ -96,13 +75,7 @@ export function SiteHeader() {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className={cn(
-                  isAboutPage && "text-white hover:bg-white/10 hover:text-white"
-                )}
-              >
+              <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
@@ -115,11 +88,11 @@ export function SiteHeader() {
                 <div className="p-6 border-b">
                   <Link href="/">
                     <Image
-                      src="https://manavrachna.edu.in/uploads/school/658c196f918591703680367.webp"
-                      alt="SMeH Logo"
-                      width={168}
-                      height={79}
-                      className="h-10 w-auto"
+                      src="/logo.jpeg"
+                      alt="Manav Rachna Times Logo"
+                      width={300}
+                      height={142}
+                      className="h-14 w-auto"
                     />
                   </Link>
                 </div>
@@ -144,9 +117,6 @@ export function SiteHeader() {
                                 <SheetClose key={sub.name} asChild>
                                   <Link
                                     href={sub.url}
-                                    target={
-                                      sub.external ? "_blank" : "_self"
-                                    }
                                     className="text-muted-foreground hover:text-foreground"
                                   >
                                     {sub.name}

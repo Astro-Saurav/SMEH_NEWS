@@ -65,7 +65,7 @@ export default function ContactPage() {
                     <div>
                         <h3 className="font-semibold">Email Us</h3>
                         <p className="text-muted-foreground hover:text-primary transition-colors">
-                            <a href="mailto:smeh@mriirs.edu.in">smeh@mriirs.edu.in</a>
+                      <a href="mailto:thefourthestate@manavrachna.com">thefourthestate@manavrachna.com</a>
                         </p>
                     </div>
                 </div>

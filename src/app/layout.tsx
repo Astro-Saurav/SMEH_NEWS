@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { LenisScroller } from '@/components/lenis-scroller';
 
 export const metadata: Metadata = {
-  title: 'SMeH – Manav Rachna',
+  title: 'Manav Rachna Times',
   description: 'News, Learning & Opportunities for Every Student',
 };
 

@@ -74,7 +74,7 @@ export default function AudioVisualPage() {
         <section className="bg-muted dark:bg-card">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
                 <h1 className="text-4xl md:text-6xl font-bold font-headline text-primary">
-                Audio-Visual Projects
+                Manav Rachna TV
                 </h1>
                 <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
                 Student work focused on video storytelling such as news packages, documentaries, short films, and more.

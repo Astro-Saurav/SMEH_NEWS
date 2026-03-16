@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -45,7 +43,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative z-10">
               <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl font-bold drop-shadow-lg">
-                School of Media Studies & Humanities
+                Manav Rachna Times
               </h1>
               <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
                 News, Learning & Opportunities for Every Student
@@ -57,7 +55,7 @@ export default function Home() {
                   className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold"
                 >
                   <Link href="#student-projects">
-                    Explore Projects <ArrowRight />
+                    Explore <ArrowRight />
                   </Link>
                 </Button>
               </div>

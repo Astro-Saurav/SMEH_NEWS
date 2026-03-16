@@ -30,7 +30,6 @@ interface NavBarProps {
 export function NavBar({ items, className }: NavBarProps) {
   const pathname = usePathname()
   const [activeTab, setActiveTab] = useState(items[0]?.name || '')
-  const isAboutPage = pathname === '/about';
 
   useEffect(() => {
     const sortedItems = [...items].sort((a, b) => (b.url?.length || 0) - (a.url?.length || 0));
@@ -69,10 +68,8 @@ export function NavBar({ items, className }: NavBarProps) {
             <div
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-4 py-2 rounded-full transition-colors flex items-center gap-2",
-                isAboutPage 
-                  ? "text-white/90 hover:text-white"
-                  : "text-foreground/80 hover:text-primary",
-                isActive && (isAboutPage ? "bg-white/10 text-white" : "text-primary"),
+                "text-foreground/80 hover:text-primary",
+                isActive && "text-primary",
               )}
             >
               <span>{item.name}</span>
@@ -82,7 +79,7 @@ export function NavBar({ items, className }: NavBarProps) {
                   layoutId="lamp"
                   className={cn(
                     "absolute inset-0 w-full rounded-full -z-10",
-                    isAboutPage ? "bg-white/5" : "bg-primary/5",
+                    "bg-primary/5",
                   )}
                   initial={false}
                   transition={{
@@ -91,8 +88,8 @@ export function NavBar({ items, className }: NavBarProps) {
                     damping: 35,
                   }}
                 >
-                  <div className={cn("absolute -top-1 left-1/2 -translate-x-1/2 w-8 h-1 rounded-t-full", isAboutPage ? "bg-white" : "bg-primary")}>
-                    <div className={cn("absolute w-12 h-6 rounded-full blur-lg -top-2 -left-2", isAboutPage ? "bg-white/20" : "bg-primary/20")} />
+                  <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-8 h-1 rounded-t-full bg-primary">
+                    <div className="absolute w-12 h-6 rounded-full blur-lg -top-2 -left-2 bg-primary/20" />
                   </div>
                 </motion.div>
               )}
