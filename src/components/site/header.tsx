@@ -60,7 +60,7 @@ export function SiteHeader() {
       <div className="container mx-auto flex h-24 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/logo.jpeg"
+            src="/logo.png"
             alt="Manav Rachna Times Logo"
             width={300}
             height={142}
@@ -88,7 +88,7 @@ export function SiteHeader() {
                 <div className="p-6 border-b">
                   <Link href="/">
                     <Image
-                      src="/logo.jpeg"
+                      src="/logo.png"
                       alt="Manav Rachna Times Logo"
                       width={300}
                       height={142}

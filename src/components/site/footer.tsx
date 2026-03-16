@@ -17,7 +17,7 @@ export function SiteFooter() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <Image
-              src="/logo.jpeg"
+              src="/logo.png"
               alt="Manav Rachna Times Logo"
               width={240}
               height={113}
