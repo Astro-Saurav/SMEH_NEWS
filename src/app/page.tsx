@@ -64,11 +64,11 @@ export default function Home() {
       </section>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 space-y-20">
-        {/* Student Projects Section */}
+        {/* Explore Section */}
         <section id="student-projects" className="scroll-mt-20">
           <div className="flex items-center gap-4 mb-8">
             <Briefcase className="w-8 h-8 text-primary" />
-            <h2 className="text-3xl font-headline font-bold">Student Projects</h2>
+            <h2 className="text-3xl font-headline font-bold">Explore</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {studentProjects.map((item) => (
