@@ -36,7 +36,7 @@ export function SiteFooter() {
                  <Image src="/logo.png" alt="logo" fill className="object-contain" sizes="48px" />
               </div>
               <span className="font-['Playfair_Display',_serif] font-black italic text-3xl tracking-tighter text-white">
-                MR <span className="text-primary">TIMES</span>
+                MANAV RACHNA <span className="text-primary">TIMES</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed max-w-sm font-medium">
@@ -74,7 +74,7 @@ export function SiteFooter() {
             <Link href="#" className="hover:text-zinc-400">Privacy Policy</Link>
             </div>
                     <div className="flex flex-col items-center md:items-end gap-3 text-center md:text-right mt-6 md:mt-0">
-            <p className="tracking-[0.4em] uppercase text-zinc-500">© 2026 MRT Network</p>
+            <p className="tracking-[0.4em] uppercase text-zinc-500">© 2026 Manav Rachna Times Network</p>
             <div className="flex flex-wrap justify-center md:justify-end items-center gap-2 tracking-[0.2em] text-[9px] uppercase text-zinc-500">
                <span className="font-bold">Architected By</span>
                <Link href="https://www.linkedin.com/in/saurav-kumar-astro/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors font-black bg-zinc-900/80 px-2.5 py-1.5 border border-zinc-800 hover:border-primary shadow-sm flex items-center gap-1">
@@ -91,6 +91,7 @@ export function SiteFooter() {
     </footer>
   );
 }
+
 
 
 
