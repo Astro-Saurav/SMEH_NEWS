@@ -35,7 +35,7 @@ export function SiteFooter() {
               <div className="relative w-12 h-12 bg-white rounded-sm p-1">
                  <Image src="/logo.png" alt="logo" fill className="object-contain" sizes="48px" />
               </div>
-              <span className="font-['Playfair_Display',_serif] font-black italic text-3xl tracking-tighter text-white">
+              <span className="font-sans font-black text-2xl lg:text-3xl tracking-tight text-white">
                 MANAV RACHNA <span className="text-primary">TIMES</span>
               </span>
             </Link>
@@ -91,6 +91,7 @@ export function SiteFooter() {
     </footer>
   );
 }
+
 
 
 
