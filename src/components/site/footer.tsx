@@ -73,12 +73,25 @@ export function SiteFooter() {
             <Link href="#" className="hover:text-zinc-400">Terms of Service</Link>
             <Link href="#" className="hover:text-zinc-400">Privacy Policy</Link>
             </div>
-          <p className="tracking-[0.4em] text-center md:text-right uppercase">© 2026 Created By <Link href="https://www.linkedin.com/in/saurav-kumar-astro/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Saurav Kumar [SCA]</Link> and <Link href="https://www.linkedin.com/in/aditya766/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Aditya Tripathi [SET]</Link></p>
+                    <div className="flex flex-col items-center md:items-end gap-3 text-center md:text-right mt-6 md:mt-0">
+            <p className="tracking-[0.4em] uppercase text-zinc-500">© 2026 MRT Network</p>
+            <div className="flex flex-wrap justify-center md:justify-end items-center gap-2 tracking-[0.2em] text-[9px] uppercase text-zinc-500">
+               <span className="font-bold">Architected By</span>
+               <Link href="https://www.linkedin.com/in/saurav-kumar-astro/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors font-black bg-zinc-900/80 px-2.5 py-1.5 border border-zinc-800 hover:border-primary shadow-sm flex items-center gap-1">
+                 Saurav Kumar <span className="text-primary tracking-widest">[SCA]</span>
+               </Link>
+               <span className="text-zinc-700 font-black px-1">&</span>
+               <Link href="https://www.linkedin.com/in/aditya766/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors font-black bg-zinc-900/80 px-2.5 py-1.5 border border-zinc-800 hover:border-primary shadow-sm flex items-center gap-1">
+                 Aditya Tripathi <span className="text-primary tracking-widest">[SET]</span>
+               </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
   );
 }
+
 
 
 
