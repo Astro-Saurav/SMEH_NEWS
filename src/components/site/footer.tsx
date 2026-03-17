@@ -7,15 +7,6 @@ import Link from "next/link";
 export function SiteFooter() {
   const sections = [
     {
-      title: "The Network",
-      links: [
-        { name: "Manav Rachna Home", href: "#" },
-        { name: "SMEH Official", href: "#" },
-        { name: "Admissions 2024", href: "#" },
-        { name: "Student Life", href: "#" },
-      ]
-    },
-    {
       title: "News Sections",
       links: [
         { name: "Campus Buzz", href: "/campus-buzz" },
@@ -81,12 +72,14 @@ export function SiteFooter() {
           <div className="flex flex-wrap justify-center gap-x-12 gap-y-6">
             <Link href="#" className="hover:text-zinc-400">Terms of Service</Link>
             <Link href="#" className="hover:text-zinc-400">Privacy Policy</Link>
-            <Link href="#" className="hover:text-zinc-400">Editorial Standards</Link>
-            <Link href="/contact" className="hover:text-zinc-400">Feedback</Link>
-          </div>
-          <p className="tracking-[0.4em]">© 2026 MANAV RACHNA TIMES. ALL RIGHTS RESERVED.</p>
+            </div>
+          <p className="tracking-[0.4em] text-center md:text-right uppercase">© 2026 Created By <Link href="https://www.linkedin.com/in/saurav-kumar-astro/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Saurav Kumar [SCA]</Link> and <Link href="https://www.linkedin.com/in/aditya766/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Aditya Tripathi [SET]</Link></p>
         </div>
       </div>
     </footer>
   );
 }
+
+
+
+
