@@ -1,137 +1,128 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Newspaper, TrendingUp, Clock, Bookmark } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
+﻿"use client";
 
-const currentAffairs = [
-  {
-    id: 1,
-    title: 'New Education Policy: Impact on Media Studies',
-    date: 'March 18, 2024',
-    excerpt: 'An analysis of how the latest national education policy shifts are reshaping the curriculum for aspiring journalists.',
-    category: 'Analysis',
-    image: 'https://picsum.photos/seed/aff1/800/500',
-    readTime: '6 min'
-  },
-  {
-    id: 2,
-    title: 'The Rise of Generative AI in Local Newsrooms',
-    date: 'March 16, 2024',
-    excerpt: 'Exploring how regional media outlets are integrating AI tools to optimize their reporting workflows without losing the human touch.',
-    category: 'Technology',
-    image: 'https://picsum.photos/seed/aff2/800/500',
-    readTime: '8 min'
-  },
-  {
-    id: 3,
-    title: 'State of Mental Health in Educational Institutions',
-    date: 'March 15, 2024',
-    excerpt: 'A deep dive into the growing mental health challenges faced by students and the steps being taken by universities to address them.',
-    category: 'Society',
-    image: 'https://picsum.photos/seed/aff3/800/500',
-    readTime: '10 min'
-  },
-];
+import { studentProjects } from "@/lib/data";
+import Image from "next/image";
+import Link from "next/link";
+import { MessageSquare, Share2, TrendingUp, Newspaper, Clock, BookOpen } from "lucide-react";
 
 export default function CurrentAffairsPage() {
+  const mainStory = studentProjects[1]; // Using variation in stories
+  const sideStory1 = studentProjects[3];
+  const listStories = studentProjects.slice(4, 8);
+  const trendingStoriesList = studentProjects.slice(0, 5);
+
   return (
-    <div className="bg-white min-h-screen">
-      {/* Header */}
-      <div className="container mx-auto max-w-7xl pt-16 md:pt-20 pb-12 px-4 border-b border-zinc-100">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <div className="max-w-3xl">
-                <Badge className="bg-secondary/5 text-primary border-none mb-4 uppercase tracking-[0.2em] font-black py-1 px-4 text-[10px]">
-                    In-Depth Reporting
-                </Badge>
-                <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-zinc-950 uppercase tracking-tighter leading-none" style={{ fontFamily: 'Playfair Display, serif' }}>
-                    Current <br /> Affairs
-                </h1>
-            </div>
-            <div className="flex flex-col gap-4 text-zinc-400 font-bold uppercase tracking-widest text-[9px] md:text-[10px]">
-                <div className="flex items-center gap-2">
-                    <TrendingUp className="w-4 h-4 text-secondary" /> Currently Trending
-                </div>
-                <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-secondary" /> Updated Daily
-                </div>
-            </div>
+    <div className="bg-white min-h-screen font-sans">
+      <main className="container mx-auto px-4 md:px-8 py-8 md:py-12">
+        {/* Section Header */}
+        <div className="border-b-4 border-zinc-900 mb-8 pb-4">
+          <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase">
+            Current <span className="text-primary italic">Affairs</span>
+          </h1>
         </div>
-      </div>
 
-      {/* Main Feed */}
-      <section className="py-12 md:py-24 px-4 bg-white">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 md:gap-16">
-            {/* Featured Post */}
-            <div className="group cursor-pointer">
-                <div className="relative aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl mb-8">
-                    <Image src={currentAffairs[0].image} alt={currentAffairs[0].title} fill className="object-cover group-hover:scale-105 transition-transform duration-1000" />
-                    <div className="absolute top-4 left-4 md:top-6 md:left-6">
-                        <Badge className="bg-primary text-white border-none py-1.5 px-3 md:px-4 font-black uppercase tracking-widest rounded-lg text-[9px] md:text-[10px]">
-                            Featured Analysis
-                        </Badge>
-                    </div>
+        {/* 3 Column Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+          
+          {/* Main Analysis - Column 1 & 2 (Lg) */}
+          <div className="lg:col-span-6 border-r-0 lg:border-r border-zinc-100 lg:pr-8">
+            <Link href="#" className="group block mb-6">
+              <div className="relative aspect-[16/10] mb-6 overflow-hidden border border-zinc-100 shadow-sm">
+                <Image 
+                  src={mainStory.image} 
+                  alt="m" 
+                  fill 
+                  className="object-cover group-hover:scale-105 transition-transform duration-1000" 
+                  priority
+                />
+                <div className="absolute top-4 left-4 bg-zinc-950 text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow-xl flex items-center gap-2">
+                   <Newspaper className="w-3.5 h-3.5 text-primary" /> Analysis
                 </div>
-                <div className="px-2">
-                    <p className="text-zinc-400 font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-[9px] md:text-[10px] mb-4 flex items-center gap-2">
-                        {currentAffairs[0].category} <span className="w-1 h-1 bg-zinc-300 rounded-full" /> {currentAffairs[0].date}
-                    </p>
-                    <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-zinc-950 leading-tight mb-6 group-hover:text-primary transition-colors">
-                        {currentAffairs[0].title}
-                    </h2>
-                    <p className="text-zinc-600 text-base md:text-lg leading-relaxed mb-8 max-w-2xl">
-                        {currentAffairs[0].excerpt}
-                    </p>
-                    <div className="flex items-center justify-between py-6 border-t border-zinc-100">
-                        <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-zinc-950">Read Post</span>
-                        <span className="text-zinc-400 font-bold text-[9px] md:text-[10px] uppercase tracking-widest flex items-center gap-2">
-                           <Clock className="w-3 h-3" /> {currentAffairs[0].readTime} read
-                        </span>
-                    </div>
-                </div>
-            </div>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-none group-hover:text-primary transition-colors mb-6 uppercase italic">
+                {mainStory.headline}
+              </h2>
+              <p className="text-zinc-600 line-clamp-3 mb-8 text-xl leading-relaxed">{mainStory.description}</p>
+              
+              <div className="flex items-center gap-6 text-[10px] font-black uppercase text-zinc-400">
+                <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> 6 Min Read</span>
+                <span className="h-4 w-px bg-zinc-100" />
+                <span className="flex items-center gap-2">Policy Review 2024</span>
+              </div>
+            </Link>
 
-            {/* Sidebar Feed */}
-            <div className="flex flex-col gap-10 md:gap-12">
-                {currentAffairs.slice(1).map((item) => (
-                    <Link key={item.id} href={`/current-affairs/${item.id}`} className="group grid grid-cols-1 sm:grid-cols-5 gap-6 md:gap-8 items-start">
-                        <div className="sm:col-span-2 relative aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden shadow-lg">
-                            <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
-                        </div>
-                        <div className="sm:col-span-3 pt-2">
-                            <Badge className="bg-zinc-100 text-zinc-500 border-none mb-3 font-black uppercase tracking-widest text-[8px] md:text-[9px]">
-                                {item.category}
-                            </Badge>
-                            <h3 className="text-lg md:text-xl lg:text-2xl font-black text-zinc-950 mb-3 group-hover:text-primary transition-colors leading-tight">
-                                {item.title}
-                            </h3>
-                            <p className="text-zinc-500 text-sm line-clamp-2 leading-relaxed mb-4 font-medium">
-                                {item.excerpt}
-                            </p>
-                            <div className="flex items-center gap-4 text-zinc-400 font-bold text-[8px] md:text-[9px] uppercase tracking-widest">
-                                <span>{item.date}</span>
-                                <span className="w-1 h-1 bg-zinc-200 rounded-full" />
-                                <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {item.readTime}</span>
-                            </div>
-                        </div>
-                    </Link>
-                ))}
-                
-                {/* Newsletter Box */}
-                <div className="bg-zinc-950 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-14 mt-6 md:mt-8 flex flex-col justify-center items-center text-center shadow-xl">
-                    <Bookmark className="w-6 h-6 md:w-8 md:h-8 text-primary-500 mb-6" />
-                    <h4 className="text-white text-xl md:text-2xl font-black uppercase tracking-tight mb-4">Daily Briefings</h4>
-                    <p className="text-zinc-500 text-xs md:text-sm mb-8 max-w-xs leading-relaxed">Get the most important news analysis delivered straight to your inbox daily.</p>
-                    <div className="w-full flex bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden p-1 focus-within:border-primary-500 transition-colors">
-                        <input type="email" placeholder="Email address" className="bg-transparent border-none focus:ring-0 text-white text-xs md:text-sm px-4 flex-1 font-medium" />
-                        <button className="bg-white text-zinc-950 font-black text-[9px] md:text-[10px] uppercase tracking-widest px-4 md:px-6 py-3 rounded-xl hover:bg-primary hover:text-white transition-all">Sign Up</button>
-                    </div>
+            <div className="space-y-6 pt-10 border-t border-zinc-100">
+              {studentProjects.slice(5, 8).map((news, i) => (
+                <div key={i} className="flex gap-6 group cursor-pointer pb-6 border-b border-zinc-50 last:border-0">
+                   <div className="text-2xl font-black text-zinc-100 group-hover:text-primary transition-colors shrink-0 tabular-nums">0{i+1}</div>
+                   <div>
+                      <h4 className="text-lg font-bold group-hover:text-primary transition-colors leading-tight mb-2 underline decoration-zinc-100">
+                        {news.headline}
+                      </h4>
+                      <p className="text-zinc-500 text-sm line-clamp-2">{news.description}</p>
+                   </div>
                 </div>
+              ))}
             </div>
           </div>
+
+          {/* Key Briefs - Middle Column */}
+          <div className="lg:col-span-3 border-r-0 lg:border-r border-zinc-100 lg:pr-8">
+            <h3 className="text-xs font-black uppercase tracking-[0.2em] mb-6">Regional Impact</h3>
+            <Link href="#" className="group block mb-10">
+              <div className="relative aspect-[3/4] mb-4 overflow-hidden">
+                <Image src={sideStory1.image} alt="side" fill className="object-cover group-hover:scale-110 grayscale group-hover:grayscale-0 transition-all duration-700" />
+                <div className="absolute bottom-4 left-4">
+                   <span className="bg-primary text-white px-2 py-1 text-[9px] font-black uppercase tracking-widest">In-Depth</span>
+                </div>
+              </div>
+              <h4 className="text-lg font-black leading-tight group-hover:text-primary transition-colors uppercase italic">
+                {sideStory1.headline}
+              </h4>
+            </Link>
+
+            <div className="space-y-6 pt-6 border-t border-zinc-100">
+               {listStories.slice(0, 3).map((story, i) => (
+                 <Link key={i} href="#" className="block group">
+                    <span className="text-[9px] font-black uppercase text-primary tracking-widest block mb-1">Weekly Update</span>
+                    <h5 className="text-sm font-bold leading-tight group-hover:text-primary transition-colors line-clamp-2">{story.headline}</h5>
+                 </Link>
+               ))}
+            </div>
+          </div>
+
+          {/* Sidebar - Trending Column */}
+          <div className="lg:col-span-3">
+             <div className="bg-zinc-50 border border-zinc-200 p-6 mb-10 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 -translate-y-1/2 translate-x-1/2 rounded-full blur-2xl" />
+                <h4 className="text-xs font-black uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                   <BookOpen className="w-3.5 h-3.5 text-primary" /> Daily Dispatch
+                </h4>
+                <div className="space-y-5 relative z-10">
+                  <p className="text-[12px] text-zinc-600 font-medium leading-relaxed italic">"Analyzing the intersections of global policy and local campus shifts."</p>
+                  <div className="h-px bg-zinc-200 w-full" />
+                  <button className="w-full bg-zinc-950 text-white text-[10px] font-black uppercase tracking-widest py-3 hover:bg-primary transition-all">Download PDF Brief</button>
+                </div>
+             </div>
+
+             <h4 className="text-xs font-black uppercase tracking-[0.2em] mb-8 flex items-center gap-2 text-zinc-400">
+                <TrendingUp className="w-4 h-4" /> Global Trending
+             </h4>
+             <div className="space-y-6">
+                {trendingStoriesList.map((story, i) => (
+                  <Link key={i} href="#" className="flex gap-4 group">
+                    <div className="text-2xl font-black text-zinc-100 group-hover:text-primary transition-colors shrink-0 tabular-nums">0{i+1}</div>
+                    <div>
+                       <h5 className="text-[12px] font-bold leading-tight group-hover:text-primary line-clamp-2">{story.headline}</h5>
+                       <span className="text-[9px] font-black text-zinc-400 uppercase tracking-widest mt-1 block">Policy Analysis</span>
+                    </div>
+                  </Link>
+                ))}
+             </div>
+          </div>
+
         </div>
-      </section>
+      </main>
     </div>
   );
 }

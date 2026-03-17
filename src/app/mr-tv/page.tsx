@@ -3,133 +3,132 @@
 import { studentProjects } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
-import { MessageSquare, Share2, TrendingUp, Play, Tv } from "lucide-react";
+import { MessageSquare, Share2, TrendingUp, Play, Tv, Wifi } from "lucide-react";
 
 export default function MRTVPage() {
-  // Use specific data for MR TV
-  const mainStory = studentProjects[0]; 
-  const listStories = studentProjects.slice(3, 6);
-  const gridStories = studentProjects.slice(1, 7);
+  const mainStory = studentProjects[0];
+  const sideStory1 = studentProjects[3];
+  const listStories = studentProjects.slice(4, 8);
+  const trendingStoriesList = studentProjects.slice(0, 5);
 
   return (
     <div className="bg-white min-h-screen font-sans">
-      {/* Editorial Header */}
-      <div className="bg-zinc-50 border-b border-zinc-100 py-12 md:py-20 mb-12">
-        <div className="container mx-auto px-4 md:px-8">
-           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-              <div>
-                 <div className="flex items-center gap-3 mb-6">
-                    <span className="w-12 h-[2px] bg-primary" />
-                    <span className="text-[11px] font-black uppercase tracking-[0.4em] text-primary">Channel 04 • Live</span>
-                 </div>
-                 <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase italic leading-none">
-                   Manav Rachna <span className="text-primary">TV</span>
-                 </h1>
-                 <p className="text-zinc-500 text-lg md:text-xl font-medium mt-6 max-w-2xl leading-relaxed">
-                   The premier digital broadcast network. News documentaries, student-led programming, and creative visuals streaming 24/7.
-                 </p>
-              </div>
-              <button className="bg-primary hover:bg-zinc-950 text-white px-10 py-5 text-[11px] font-black uppercase tracking-[0.3em] flex items-center gap-4 transition-all duration-500 shadow-2xl mb-2">
-                 <Tv className="w-6 h-6" /> Watch Live Now
-              </button>
-           </div>
+      <main className="container mx-auto px-4 md:px-8 py-8 md:py-12">
+        {/* Section Header */}
+        <div className="border-b-4 border-zinc-900 mb-8 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase">
+            Manav Rachna <span className="text-primary italic">TV</span>
+          </h1>
+          <div className="flex items-center gap-4 mb-2">
+             <span className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-primary animate-pulse"><Wifi className="w-3 h-3" /> Live Channel</span>
+             <span className="h-4 w-px bg-zinc-200" />
+             <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Channel 04</span>
+          </div>
         </div>
-      </div>
 
-      <main className="container mx-auto px-4 md:px-8 pb-24">
-        <div className="grid lg:grid-cols-12 gap-12">
-          {/* Main Feed */}
-          <div className="lg:col-span-8 space-y-16">
-            <div className="group block relative cursor-pointer">
-              <div className="relative aspect-[16/9] mb-8 overflow-hidden bg-zinc-950 border border-zinc-900">
-                <Image src={mainStory.image} alt="m" fill className="object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" sizes="70vw" priority />
+        {/* 3 Column Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+          
+          {/* Main Broadcast - Column 1 & 2 (Lg) */}
+          <div className="lg:col-span-6 border-r-0 lg:border-r border-zinc-100 lg:pr-8">
+            <div className="group block relative cursor-pointer mb-6">
+              <div className="relative aspect-video mb-4 overflow-hidden bg-zinc-950">
+                <Image 
+                  src={mainStory.image} 
+                  alt="m" 
+                  fill 
+                  className="object-cover opacity-60 group-hover:opacity-100 transition-all duration-700" 
+                  priority
+                />
                 <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-24 h-24 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-primary transition-all duration-500">
-                      <Play className="w-10 h-10 text-white fill-white" />
+                   <div className="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-500">
+                      <Play className="w-8 h-8 fill-white ml-1" />
                    </div>
                 </div>
-                <div className="absolute top-6 left-6 bg-primary text-white px-4 py-1.5 text-[10px] font-black uppercase tracking-widest shadow-xl">
-                   Featured Broadcast
+                <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest shadow-xl">
+                  Featured
                 </div>
               </div>
-              <div className="flex items-center gap-4 mb-4 text-[11px] font-black uppercase tracking-widest text-zinc-400">
-                 <span className="flex items-center gap-1.5 text-primary">Now Playing</span>
-                 <span className="w-1 h-1 bg-zinc-300 rounded-full" />
-                 <span>2.4K Watching</span>
-              </div>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[0.9] group-hover:text-zinc-800 mb-6">
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-none group-hover:text-primary transition-colors mb-4">
                 {mainStory.headline}
               </h2>
-              <p className="text-xl text-zinc-600 leading-relaxed mb-8 max-w-3xl">
-                {mainStory.description}
-              </p>
-              <div className="flex items-center gap-6 text-zinc-400">
-                 <button className="flex items-center gap-2 hover:text-primary transition-colors text-[11px] font-black uppercase tracking-wider"><MessageSquare className="w-4 h-4" /> Join Live Chat</button>
-                 <button className="flex items-center gap-2 hover:text-primary transition-colors text-[11px] font-black uppercase tracking-wider"><Share2 className="w-4 h-4" /> Share Stream</button>
+              <p className="text-zinc-600 line-clamp-3 mb-6 text-lg">{mainStory.description}</p>
+              <div className="flex gap-6 mt-4 pt-4 border-t border-zinc-100">
+                {studentProjects.slice(6, 9).map((news, i) => (
+                  <Link key={i} href="#" className="block group flex-1">
+                    <h4 className="text-[13px] font-bold group-hover:text-primary transition-colors line-clamp-2">
+                      {news.headline}
+                    </h4>
+                  </Link>
+                ))}
               </div>
             </div>
+          </div>
 
-            <div className="h-px bg-zinc-100 w-full" />
+          {/* Secondary Features - Middle Column */}
+          <div className="lg:col-span-3 border-r-0 lg:border-r border-zinc-100 lg:pr-8">
+            <h3 className="text-xs font-black uppercase tracking-[0.2em] mb-6">Coming Up Next</h3>
+            <Link href="#" className="group block mb-8">
+              <div className="relative aspect-video mb-3 overflow-hidden">
+                <Image src={sideStory1.image} alt="side" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <h4 className="text-lg font-black leading-tight group-hover:text-primary transition-colors">
+                {sideStory1.headline}
+              </h4>
+              <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mt-2 block">10:30 AM • Entertainment</span>
+            </Link>
 
-            <div className="grid md:grid-cols-2 gap-12">
-               {listStories.map((story, i) => (
-                 <Link key={i} href="#" className="group">
-                    <div className="relative aspect-video mb-6 overflow-hidden bg-zinc-100 border border-zinc-50 relative">
-                      <Image src={story.image} alt="s" fill className="object-cover group-hover:scale-110 transition-transform duration-700" sizes="40vw" />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors flex items-center justify-center">
-                         <Play className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-500" />
-                      </div>
+            <div className="space-y-6 pt-6 border-t border-zinc-100">
+               {listStories.slice(0, 3).map((story, i) => (
+                 <Link key={i} href="#" className="flex gap-4 group">
+                    <div className="relative w-16 h-16 shrink-0 bg-zinc-100">
+                       <Image src={story.image} alt="s" fill className="object-cover" />
                     </div>
-                    <div className="flex items-center gap-2 mb-3">
-                       <span className="text-[9px] font-black uppercase tracking-widest text-primary">{story.category}</span>
-                       <span className="text-[9px] font-bold text-zinc-300 uppercase tracking-widest">Episode 12</span>
+                    <div>
+                       <h5 className="text-[12px] font-bold leading-tight group-hover:text-primary line-clamp-2">{story.headline}</h5>
+                       <span className="text-[9px] font-black uppercase text-zinc-400 mt-1 block tracking-tighter">On Demand</span>
                     </div>
-                    <h3 className="text-2xl font-black tracking-tight group-hover:text-primary leading-tight mb-4">{story.headline}</h3>
-                    <p className="text-zinc-500 text-sm leading-relaxed line-clamp-3">{story.description}</p>
                  </Link>
                ))}
             </div>
           </div>
 
-          {/* Sidebar */}
-          <div className="lg:col-span-4 space-y-12">
-            <div>
-              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-950 border-b-2 border-zinc-950 pb-2 mb-8 flex items-center gap-2">
-                <TrendingUp className="w-4 h-4" /> Global Trending
-              </h3>
-              <div className="space-y-10">
-                {gridStories.map((item, i) => (
-                  <Link key={i} href="#" className="block group">
-                    <div className="flex gap-6">
-                       <span className="text-5xl font-black text-zinc-100 group-hover:text-primary transition-colors shrink-0 tabular-nums">0{i+1}</span>
-                       <div className="space-y-2">
-                          <h4 className="text-sm font-bold leading-snug group-hover:text-primary group-hover:underline decoration-zinc-200 transition-all">{item.headline}</h4>
-                          <span className="text-[9px] font-black uppercase tracking-widest text-zinc-400 group-hover:text-zinc-600">{item.category}</span>
-                       </div>
+          {/* Sidebar - Schedule & Trending */}
+          <div className="lg:col-span-3">
+             <div className="bg-zinc-950 text-white p-6 border-l-4 border-primary mb-10">
+                <h4 className="text-primary font-black uppercase text-[10px] tracking-[0.3em] mb-6 flex items-center gap-2">
+                   <Tv className="w-3.5 h-3.5" /> Programming
+                </h4>
+                <div className="space-y-4">
+                  {[
+                    { time: "09:00", show: "Morning Buzz" },
+                    { time: "12:30", show: "Tech Insider" },
+                    { time: "18:00", show: "Global Wrap" },
+                  ].map((s, i) => (
+                    <div key={i} className="flex justify-between items-center border-b border-zinc-900 pb-3 last:border-0">
+                       <span className="text-[11px] font-black italic">{s.show}</span>
+                       <span className="text-[10px] font-medium text-zinc-500">{s.time}</span>
+                    </div>
+                  ))}
+                </div>
+             </div>
+
+             <h4 className="text-xs font-black uppercase tracking-[0.2em] mb-8 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-primary" /> Most Watched
+             </h4>
+             <div className="space-y-6">
+                {trendingStoriesList.map((story, i) => (
+                  <Link key={i} href="#" className="flex gap-4 group">
+                    <div className="text-2xl font-black text-zinc-100 group-hover:text-primary transition-colors shrink-0 tabular-nums">0{i+1}</div>
+                    <div>
+                       <h5 className="text-[12px] font-bold leading-tight group-hover:text-primary transition-colors line-clamp-2">{story.headline}</h5>
+                       <span className="text-[9px] font-black text-zinc-400 uppercase tracking-widest mt-1 block">1.2M Views</span>
                     </div>
                   </Link>
                 ))}
-              </div>
-            </div>
-
-            <div className="sticky top-24 bg-zinc-950 text-white p-10 border-l-4 border-primary">
-               <h3 className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-8 border-b border-zinc-900 pb-4">Programming Guide</h3>
-               <div className="space-y-8 mb-12">
-                  {[
-                    { time: "09:00 AM", show: "Morning Buzz" },
-                    { time: "01:00 PM", show: "SMEH Lunch Hour" },
-                    { time: "06:00 PM", show: "News Wrap" },
-                    { time: "09:00 PM", show: "Documentary Hour" }
-                  ].map((schedule, i) => (
-                    <div key={i} className="flex flex-col gap-1 border-l border-zinc-800 pl-4 py-1">
-                       <span className="text-primary text-[9px] font-black uppercase tracking-widest">{schedule.time}</span>
-                       <span className="text-white text-[13px] font-black uppercase tracking-tight">{schedule.show}</span>
-                    </div>
-                  ))}
-               </div>
-               <button className="w-full bg-primary text-white font-black uppercase text-[11px] tracking-widest py-4 hover:bg-white hover:text-zinc-950 transition-all shadow-2xl">Full Schedule</button>
-            </div>
+             </div>
           </div>
+
         </div>
       </main>
     </div>
