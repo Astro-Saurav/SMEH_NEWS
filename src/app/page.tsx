@@ -1,232 +1,187 @@
-"use client";
+﻿"use client";
 
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import {
-  studentProjects,
-  documentaryAndShortFilms
+import { 
+  studentProjects, 
+  documentaryAndShortFilms 
 } from '@/lib/data';
-import { PlayCircle, Award, TrendingUp } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { 
+  PlayCircle, 
+  TrendingUp, 
+  ChevronRight,
+  Clock,
+  MessageCircle,
+  Share2
+} from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Home() {
-  const heroImages = PlaceHolderImages.filter((img) =>
-    img.id.startsWith('hero-')
-  );
-
   const mainArticle = studentProjects[0];
-  const topStories = studentProjects.slice(1, 5); 
-  const exploreMore = studentProjects.slice(2, 6);
-
-  // Reusable animation configuration
-  const fadeUpVariant = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-  };
+  const worldNews = studentProjects.slice(1, 4);
+  const opinionNews = studentProjects.slice(4, 7);
 
   return (
-    <div className="flex flex-col bg-[#fafafa] text-zinc-900 font-body min-h-screen">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+    <div className="flex flex-col bg-white text-zinc-950 font-body min-h-screen">
+      
+      <main className="container mx-auto px-4 md:px-8 py-6 md:py-10">
         
-        {/* Top Story & Trending Grid */}
-        <motion.section 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={fadeUpVariant}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16"
-        >
-          {/* Main Featured Article (Left 8 cols) */}
-          <div className="lg:col-span-8 group cursor-pointer">
-             <Link href={mainArticle.link} className="flex flex-col">
-                <div className="relative w-full aspect-[16/9] md:aspect-[21/9] bg-zinc-900 overflow-hidden rounded-xl shadow-sm mb-6 mask-video">
-                   <iframe
-                     src="https://www.youtube.com/embed/CV08TgRVNT8?autoplay=1&mute=1&loop=1&playlist=CV08TgRVNT8&controls=0&modestbranding=1&rel=0&disablekb=1"
-                     className="absolute top-1/2 left-1/2 w-[150%] h-[150%] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-90 transition-opacity duration-700 group-hover:opacity-100"
-                     allow="autoplay; encrypted-media"
-                     title="Hero Background Video"
-                   />
-                   <div className="absolute inset-0 bg-transparent group-hover:bg-indigo-900/10 transition-colors pointer-events-none" />
-                   <div className="absolute top-4 left-4 bg-indigo-600 text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full z-10 shadow-md">
-                      Editor's Pick
-                   </div>
-                </div>
-                <div className="max-w-3xl flex-1 relative z-20">
-                   <span className="text-indigo-700 font-bold text-xs uppercase tracking-widest mb-3 block">
-                     {mainArticle.category}
-                   </span>
-                   <h2 className="font-headline text-3xl md:text-5xl font-black leading-tight text-zinc-900 mb-4 group-hover:text-indigo-800 transition-colors">
-                     {mainArticle.headline}
-                   </h2>
-                   <p className="text-zinc-600 text-lg md:text-xl leading-relaxed mb-4 line-clamp-3 font-light">
-                     {mainArticle.description}
-                   </p>
-                   <span className="text-xs text-zinc-400 font-medium uppercase tracking-wider">
-                     By Editorial Board • 2 hours ago
-                   </span>
-                </div>
-             </Link>
+        {/* Main News Hub - CNN Style High-Intensity Grid */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-0 border-b border-zinc-200 mb-16">
+          
+          {/* Left Column: Quick Scan Headlines */}
+          <div className="lg:col-span-3 lg:border-r border-zinc-200 pr-0 lg:pr-6 pb-10 border-b lg:border-b-0 mb-10 lg:mb-0">
+            <h3 className="text-xs font-black uppercase tracking-widest text-primary border-b-2 border-primary w-fit pb-1 mb-6">Latest Buzz</h3>
+            <div className="flex flex-col divide-y divide-zinc-100">
+              {studentProjects.slice(2, 6).map((item, idx) => (
+                <Link key={idx} href={item.link} className="group py-5 block first:pt-0">
+                  <span className="text-[10px] font-black uppercase text-zinc-400 tracking-wider mb-2 block">{item.category}</span>
+                  <h4 className="text-[15px] font-black leading-snug group-hover:text-primary transition-colors mb-3">
+                    {item.headline}
+                  </h4>
+                  {idx === 1 && (
+                     <div className="relative aspect-video mb-3">
+                       <Image 
+                         src={item.image} 
+                         alt="side-news" 
+                         fill 
+                         sizes="(max-width: 768px) 100vw, 25vw"
+                         className="object-cover" 
+                       />
+                     </div>
+                  )}
+                  <div className="flex items-center gap-3 text-[10px] font-bold text-zinc-400">
+                    <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> 2h ago</span>
+                    <span className="flex items-center gap-1"><MessageCircle className="w-3 h-3" /> 12</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
 
-          {/* Trending Panel (Right 4 cols) */}
-          <div className="lg:col-span-4 flex flex-col bg-white p-6 rounded-xl shadow-sm border border-zinc-100 relative z-20">
-             <div className="flex items-center gap-2 mb-6 border-b border-zinc-100 pb-4">
-                <TrendingUp className="w-5 h-5 text-indigo-600" />
-                <h3 className="font-headline text-2xl font-bold text-zinc-900">Trending Now</h3>
-             </div>
-             <div className="flex flex-col gap-6">
-                {topStories.map((item, index) => (
-                  <motion.div key={item.id} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.1, duration: 0.5 }}>
-                    <Link href={item.link} className="group flex gap-4 items-start">
-                       <span className="text-4xl font-headline font-black text-zinc-200 mt-[-6px]">
-                          {index + 1}
-                       </span>
-                       <div className="flex-1">
-                          <span className="text-indigo-600 font-bold text-[10px] uppercase tracking-wider mb-1 block">
-                            {item.category}
-                          </span>
-                          <h4 className="text-base font-bold leading-snug text-zinc-800 group-hover:text-indigo-700 transition-colors">
-                             {item.headline}
-                          </h4>
-                       </div>
-                    </Link>
-                  </motion.div>
+          {/* Center Column: The Lead Story */}
+          <div className="lg:col-span-6 px-0 lg:px-8 pb-10 lg:border-r border-zinc-200 border-b lg:border-b-0 mb-10 lg:mb-0">
+            <Link href={mainArticle.link} className="group block">
+              <div className="mb-0 text-center">
+                <span className="inline-flex items-center gap-2 bg-primary text-white px-2 py-0.5 text-[9px] font-black uppercase tracking-[0.2em] mb-6">
+                  <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
+                  Live Updates
+                </span>
+                <h1 className="text-3xl md:text-5xl lg:text-[2.75rem] font-black font-headline tracking-tight leading-[1.05] mb-8 text-zinc-950 group-hover:text-zinc-800 transition-colors">
+                  {mainArticle.headline}
+                </h1>
+              </div>
+
+              <div className="relative w-full aspect-video bg-zinc-100 overflow-hidden mb-8">
+                <iframe
+                  src="https://www.youtube.com/embed/CV08TgRVNT8?autoplay=1&mute=1&loop=1&playlist=CV08TgRVNT8&controls=0&modestbranding=1&rel=0&disablekb=1"
+                  className="absolute top-0 left-0 w-full h-full pointer-events-none"
+                  allow="autoplay; encrypted-media"
+                />
+              </div>
+
+              <div className="max-w-xl mx-auto">
+                <p className="text-[17px] font-medium leading-relaxed text-zinc-600 mb-8 pb-8 border-b border-zinc-100">
+                  {mainArticle.description}
+                </p>
+                <div className="space-y-4">
+                  {studentProjects.slice(1, 3).map((sub, i) => (
+                    <div key={i} className="flex gap-4 group/sub hover:text-primary cursor-pointer transition-colors">
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                      <span className="text-sm font-black leading-snug">{sub.headline}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          {/* Right Column: Featured & Multimedia */}
+          <div className="lg:col-span-3 pl-0 lg:pl-6 pb-10">
+            <div className="bg-zinc-50 border border-zinc-100 p-5 mb-8">
+              <div className="flex items-center justify-between mb-4 pb-2 border-b border-zinc-200">
+                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-950">Multimedia</h3>
+                <TrendingUp className="w-4 h-4 text-primary" />
+              </div>
+              <div className="space-y-6">
+                {documentaryAndShortFilms.slice(0, 2).map((video, idx) => (
+                  <Link key={idx} href="/explore/audio-visual" className="group block">
+                    <div className="relative aspect-video mb-3 overflow-hidden">
+                      <Image 
+                        src={video.thumbnailUrl} 
+                        alt="video" 
+                        fill 
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/0 transition-all text-white">
+                        <PlayCircle className="w-8 h-8 opacity-80" />
+                      </div>
+                    </div>
+                    <h4 className="text-[13px] font-black leading-tight group-hover:text-primary transition-colors">{video.title}</h4>
+                  </Link>
                 ))}
-             </div>
+              </div>
+            </div>
+
+            <div className="space-y-5">
+              <h3 className="text-xs font-black uppercase tracking-widest text-zinc-400 border-b border-zinc-100 pb-2">Analysis</h3>
+              {opinionNews.slice(0, 2).map((item, idx) => (
+                <Link key={idx} href={item.link} className="group block">
+                   <h4 className="text-sm font-black leading-snug group-hover:text-primary transition-colors underline decoration-zinc-100 underline-offset-4 decoration-2">
+                     {item.headline}
+                   </h4>
+                   <span className="text-[10px] font-bold text-zinc-400 mt-2 block uppercase tracking-wider">By Editorial Team</span>
+                </Link>
+              ))}
+            </div>
           </div>
-        </motion.section>
+        </section>
 
-        {/* Visual Journalism Showcase (Full width stylized) */}
-        <motion.section 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUpVariant}
-          className="mb-20"
-        >
-           <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-              
-              <div className="relative z-10 flex flex-col md:flex-row justify-between items-end mb-10 border-b border-slate-700 pb-4">
-                 <div>
-                   <h2 className="font-headline text-3xl md:text-4xl font-black mb-2">Visual Journalism</h2>
-                   <p className="text-slate-400 text-sm md:text-base font-medium">Stories told through motion and frame.</p>
-                 </div>
-                 <Link href="/explore/audio-visual" className="mt-4 md:mt-0 text-sm font-bold uppercase tracking-wider text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1">
-                    Watch All <TrendingUp className="w-4 h-4" />
-                 </Link>
+        {/* Sectional Grid: Modern Content Blocks */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 pb-20">
+          {[
+            { name: "Manav Rachna TV", data: documentaryAndShortFilms.slice(2, 5), type: 'video' },
+            { name: "Campus Buzz", data: studentProjects.slice(3, 6), type: 'article' },
+            { name: "Social Buzz", data: studentProjects.slice(0, 3), type: 'article' }
+          ].map((sec, i) => (
+            <div key={i} className="flex flex-col">
+              <h2 className="text-lg font-black uppercase tracking-tighter mb-8 flex items-center gap-3">
+                <span className="w-2 h-6 bg-zinc-950" />
+                {sec.name}
+              </h2>
+              <div className="space-y-8">
+                {sec.data.map((item: any, idx) => (
+                   <Link key={idx} href="#" className="group block">
+                      <div className="relative aspect-video mb-4 bg-zinc-100 overflow-hidden">
+                        <Image 
+                          src={item.image || item.thumbnailUrl} 
+                          alt="news" 
+                          fill 
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                        />
+                        {sec.type === 'video' && <PlayCircle className="absolute inset-0 m-auto w-10 h-10 text-white/90" />}
+                      </div>
+                      <h4 className="font-black text-[15px] leading-tight group-hover:text-primary transition-colors mb-2">
+                        {item.headline || item.title}
+                      </h4>
+                      <p className="text-[12px] text-zinc-500 font-medium line-clamp-2 leading-relaxed">
+                        {item.description || "In-depth coverage and reporting from the Manav Rachna campus and beyond."}
+                      </p>
+                   </Link>
+                ))}
               </div>
+              <Link href="#" className="mt-8 text-[11px] font-black uppercase tracking-widest text-zinc-400 hover:text-primary transition-all flex items-center gap-1 group/more">
+                See all {sec.name} <ChevronRight className="w-3 h-3 group-hover/more:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          ))}
+        </div>
 
-              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                 {documentaryAndShortFilms.slice(0, 4).map((item, i) => (
-                    <motion.div key={item.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.15, duration: 0.6 }}>
-                      <Link href="/explore/audio-visual" className="group flex flex-col">
-                         <div className="relative aspect-video w-full mb-4 overflow-hidden rounded-xl bg-slate-800 border border-slate-700/50">
-                            <Image src={item.thumbnailUrl} alt={item.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100" />
-                            <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors" />
-                            <div className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm shadow-lg flex items-center justify-center group-hover:bg-indigo-600 group-hover:scale-110 transition-all">
-                               <PlayCircle className="w-5 h-5 text-white ml-0.5" />
-                            </div>
-                         </div>
-                         <span className="text-indigo-400 font-bold text-[10px] uppercase tracking-wider mb-2 block">
-                           {item.subject}
-                         </span>
-                         <h4 className="text-lg font-bold leading-tight group-hover:text-indigo-300 transition-colors">
-                           {item.title}
-                         </h4>
-                      </Link>
-                    </motion.div>
-                 ))}
-              </div>
-           </div>
-        </motion.section>
-
-        {/* Modular Grid: More Sections */}
-        <motion.section 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeUpVariant}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-16"
-        >
-           {/* Section 1 */}
-           <div className="flex flex-col">
-              <div className="flex items-center justify-between border-b-2 border-zinc-900 pb-2 mb-6">
-                 <h2 className="font-headline text-2xl font-black uppercase">Campus Buzz</h2>
-              </div>
-              <div className="flex flex-col gap-6">
-                 {exploreMore.map((item, i) => (
-                   <motion.div key={`buzz-${item.id}`} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.1, duration: 0.5 }}>
-                     <Link href={item.link} className="group grid grid-cols-3 gap-4">
-                        <div className="col-span-1 relative aspect-square rounded-lg overflow-hidden bg-zinc-200">
-                           <Image src={item.image} alt={item.headline} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                        </div>
-                        <div className="col-span-2 flex flex-col justify-center">
-                           <h4 className="text-[15px] font-bold leading-snug text-zinc-900 group-hover:text-indigo-700 transition-colors line-clamp-3">
-                              {item.headline}
-                           </h4>
-                           <span className="text-[10px] text-zinc-500 font-medium uppercase mt-2">12 hours ago</span>
-                        </div>
-                     </Link>
-                   </motion.div>
-                 ))}
-              </div>
-           </div>
-
-           {/* Section 2 */}
-           <div className="flex flex-col">
-              <div className="flex items-center justify-between border-b-2 border-zinc-900 pb-2 mb-6">
-                 <h2 className="font-headline text-2xl font-black uppercase">Blog</h2>
-              </div>
-              <div className="flex flex-col gap-6">
-                 {exploreMore.map((item, i) => (
-                   <motion.div key={`feat-${item.id}`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1, duration: 0.5 }}>
-                     <Link href={item.link} className="group grid grid-cols-3 gap-4">
-                        <div className="col-span-1 relative aspect-square rounded-lg overflow-hidden bg-zinc-200">
-                           <Image src={item.image} alt={item.headline} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                        </div>
-                        <div className="col-span-2 flex flex-col justify-center">
-                           <h4 className="text-[15px] font-bold leading-snug text-zinc-900 group-hover:text-indigo-700 transition-colors line-clamp-3">
-                              {item.headline}
-                           </h4>
-                           <span className="text-[10px] text-zinc-500 font-medium uppercase mt-2">18 hours ago</span>
-                        </div>
-                     </Link>
-                   </motion.div>
-                 ))}
-              </div>
-           </div>
-
-           {/* Section 3 (Highlight Box) */}
-           <div className="flex flex-col bg-indigo-50/50 rounded-2xl p-6 border border-indigo-100">
-              <div className="flex items-center gap-2 mb-6">
-                 <Award className="w-6 h-6 text-indigo-600" />
-                 <h2 className="font-headline text-2xl font-black text-indigo-950 uppercase">Competitions</h2>
-              </div>
-              <p className="text-sm text-indigo-800/80 mb-6 font-medium">Discover the latest opportunities, hackathons, and literary competitions for MRU students.</p>
-              
-              <div className="flex flex-col gap-4 flex-1">
-                 {studentProjects.slice(0, 3).map((item, i) => (
-                   <motion.div key={`comp-${item.id}`} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: i * 0.15, duration: 0.4 }}>
-                     <Link href="/competitions" className="group bg-white p-4 rounded-xl shadow-sm border border-indigo-50 hover:shadow-md transition-shadow block">
-                        <h4 className="text-sm font-bold text-indigo-950 group-hover:text-indigo-600 mb-1">Upcoming Campus Hackathon</h4>
-                        <div className="flex justify-between items-center mt-2 text-[10px] uppercase font-bold text-indigo-400">
-                           <span>Ends in {i+2} days</span>
-                           <span className="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full">Apply</span>
-                        </div>
-                     </Link>
-                   </motion.div>
-                 ))}
-                 <Button className="mt-auto w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl">View All Opportunities</Button>
-              </div>
-           </div>
-        </motion.section>
-
-      </div>
+      </main>
     </div>
   );
 }

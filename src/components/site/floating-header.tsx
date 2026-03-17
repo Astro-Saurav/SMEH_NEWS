@@ -49,7 +49,7 @@ export function FloatingHeader() {
 					))}
 				</div>
 				<div className="flex items-center gap-2">
-					<Button size="sm">Login</Button>
+					<Button size="sm" variant="accent">Login</Button>
 					<Sheet open={open} onOpenChange={setOpen}>
 						<Button
 							size="icon"
@@ -80,7 +80,7 @@ export function FloatingHeader() {
 							</div>
 							<SheetFooter>
 								<Button variant="outline">Sign In</Button>
-								<Button>Get Started</Button>
+								<Button variant="accent">Get Started</Button>
 							</SheetFooter>
 						</SheetContent>
 					</Sheet>

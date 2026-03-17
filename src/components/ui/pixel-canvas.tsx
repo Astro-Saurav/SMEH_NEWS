@@ -166,7 +166,7 @@ const PixelCanvas = React.forwardRef<HTMLDivElement, PixelCanvasProps>(
           }
 
           get colors() {
-            return this.dataset.colors?.split(",") || ["#f8fafc", "#f1f5f9", "#cbd5e1"]
+            return this.dataset.colors?.split(",") || ["#A52A1F", "#2E5E3E", "#D4A62A", "#6FAF3A"]
           }
 
           get gap() {

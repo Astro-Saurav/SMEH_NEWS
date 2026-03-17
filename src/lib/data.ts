@@ -7,7 +7,7 @@ export const studentProjects: NewsCardProps[] = [
     id: 'proj1',
     category: 'Manav Rachna TV',
     headline: 'Documentary: The Lifeline of a City',
-    description: 'A short documentary exploring the daily lives of commuters on the city\'s metro.',
+    description: "A short documentary exploring the daily lives of commuters on the city's metro.",
     image: 'https://picsum.photos/seed/project1/600/400',
     imageHint: 'documentary film',
     link: '/explore/audio-visual',
@@ -202,6 +202,86 @@ export const competitions: { id: string; name: string; organizer: string; deadli
     organizer: 'IIT Bombay',
     deadline: '2024-09-28',
     eligibility: 'Engineering Graduates/Final Year',
+    link: '#',
+  },
+];
+
+export interface Achievement {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  year: string;
+  image: string;
+}
+
+export const achievements: Achievement[] = [
+  {
+    id: 'ach1',
+    title: 'Best Student Film Award',
+    description: "Our students won the top prize at the National Student Film Festival for their documentary \"City of Dreams\".",
+    category: 'Film Production',
+    year: '2023',
+    image: 'https://picsum.photos/seed/award1/800/600',
+  },
+  {
+    id: 'ach2',
+    title: 'Excellence in Journalism',
+    description: 'The "Campus Chronicle" was awarded "Best Student Newspaper" for its investigative reporting on university policies.',
+    category: 'Print Media',
+    year: '2023',
+    image: 'https://picsum.photos/seed/award2/800/600',
+  },
+  {
+    id: 'ach3',
+    title: 'Top University Podcast',
+    description: '"Mind Matters," a podcast on mental health awareness, was ranked #1 among university podcasts in the country.',
+    category: 'Audio Podcasts',
+    year: '2022',
+    image: 'https://picsum.photos/seed/award3/800/600',
+  },
+  {
+    id: 'ach4',
+    title: 'National Advertising Competition Winner',
+    description: 'A team of our PR & Advertising students won first place for their "Drive Safe" campaign.',
+    category: 'PR & Advertising',
+    year: '2022',
+    image: 'https://picsum.photos/seed/award4/800/600',
+  },
+];
+
+export interface Announcement {
+  id: string;
+  title: string;
+  date: string;
+  category: string;
+  priority: 'high' | 'medium' | 'low';
+  link: string;
+}
+
+export const announcements: Announcement[] = [
+  {
+    id: 'ann1',
+    title: 'Innovation Summit 2024: Call for Proposals',
+    date: '2024-03-20',
+    category: 'Academic',
+    priority: 'high',
+    link: '#',
+  },
+  {
+    id: 'ann2',
+    title: 'SMEH Student Council Elections: Final Results',
+    date: '2024-03-18',
+    category: 'Student Life',
+    priority: 'medium',
+    link: '#',
+  },
+  {
+    id: 'ann3',
+    title: 'New Multimedia Lab Opening in Building 5',
+    date: '2024-03-15',
+    category: 'Facilities',
+    priority: 'high',
     link: '#',
   },
 ];

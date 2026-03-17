@@ -1,134 +1,104 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Award, Mic, Film, Newspaper, Trophy, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
+﻿"use client";
 
-const achievements = [
-  {
-    icon: <Trophy className="h-10 w-10 text-amber-500" />,
-    title: 'Best Student Film Award',
-    description: 'Our students won the top prize at the National Student Film Festival for their documentary "City of Dreams."',
-    category: 'Film Production',
-    year: '2023',
-    image: 'https://picsum.photos/seed/award1/800/600',
-  },
-  {
-    icon: <Newspaper className="h-10 w-10 text-sky-500" />,
-    title: 'Excellence in Journalism',
-    description: 'The "Campus Chronicle" was awarded "Best Student Newspaper" for its investigative reporting on university policies.',
-    category: 'Print Media',
-    year: '2023',
-    image: 'https://picsum.photos/seed/award2/800/600',
-  },
-  {
-    icon: <Mic className="h-10 w-10 text-green-500" />,
-    title: 'Top University Podcast',
-    description: '"Mind Matters," a podcast on mental health awareness, was ranked #1 among university podcasts in the country.',
-    category: 'Audio Podcasts',
-    year: '2022',
-    image: 'https://picsum.photos/seed/award3/800/600',
-  },
-  {
-    icon: <Award className="h-10 w-10 text-rose-500" />,
-    title: 'National Advertising Competition Winner',
-    description: 'A team of our PR & Advertising students won first place for their "Drive Safe" campaign.',
-    category: 'PR & Advertising',
-    year: '2022',
-    image: 'https://picsum.photos/seed/award4/800/600',
-  },
-];
+import { studentProjects } from "@/lib/data";
+import Image from "next/image";
+import Link from "next/link";
+import { MessageSquare, Share2, TrendingUp, Award, Star } from "lucide-react";
 
 export default function AchievementsPage() {
+  const mainStory = studentProjects[0]; 
+  const highlights = studentProjects.slice(1, 4);
+  const wallOfFame = studentProjects.slice(4, 10);
+
   return (
-    <div className="bg-white min-h-screen">
-      {/* Cinematic Hero */}
-      <section className="bg-zinc-950 pt-24 pb-20 md:pt-40 md:pb-32 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-indigo-600/10 blur-[120px] rounded-full -translate-y-1/2" />
-        <div className="container mx-auto px-4 relative z-10 text-center">
-            <Badge className="bg-indigo-600 text-white border-none mb-8 px-6 py-1.5 font-black uppercase tracking-[0.3em] text-[10px] rounded-full">
-                Honoring Merit
-            </Badge>
-          <h1 className="text-4xl md:text-8xl lg:text-9xl font-black text-white uppercase tracking-tighter leading-none mb-10" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Achievements
-          </h1>
-          <p className="max-w-3xl mx-auto text-zinc-400 text-lg md:text-xl font-medium leading-relaxed">
-            Celebrating the extraordinary milestones and groundbreaking success stories of our students and faculty across the global stage.
-          </p>
+    <div className="bg-white min-h-screen font-sans">
+      {/* Hall of Fame Header - Updated to Light Professional Style */}
+      <div className="bg-zinc-50 border-b border-zinc-100 py-20 md:py-32 mb-12 relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+           <div className="flex items-center gap-3 mb-6">
+              <span className="w-12 h-[2px] bg-primary" />
+              <span className="text-[11px] font-black uppercase tracking-[0.4em] text-primary">Excellence Documented</span>
+           </div>
+           <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase italic leading-none">
+             Hall of <span className="text-primary">Fame</span>
+           </h1>
+           <p className="text-zinc-600 text-lg md:text-xl font-medium mt-8 max-w-2xl leading-relaxed">
+             Celebrating the landmark achievements of our students and faculty. From national awards to global recognition in media and journalism.
+           </p>
         </div>
-      </section>
+      </div>
 
-      {/* Modern Grid */}
-      <section className="py-20 md:py-32 px-4">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16">
-            {achievements.map((item, index) => (
-              <div key={index} className="group relative">
-                <div className="relative aspect-[16/11] rounded-[2rem] overflow-hidden shadow-2xl mb-8">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-60" />
-                  <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
-                    {item.icon}
-                  </div>
-                </div>
-                
-                <div className="px-4">
-                   <div className="flex items-center gap-4 mb-4">
-                     <Badge variant="secondary" className="bg-zinc-100 text-zinc-900 border-none font-black uppercase tracking-widest text-[9px] px-3 py-1">
-                        {item.category}
-                     </Badge>
-                     <span className="text-zinc-400 font-bold text-[10px] uppercase tracking-widest">{item.year} Edition</span>
-                   </div>
-                   
-                   <h2 className="text-2xl md:text-4xl font-black text-zinc-950 mb-4 group-hover:text-indigo-700 transition-colors leading-tight">
-                        {item.title}
+      <main className="container mx-auto px-4 md:px-8 pb-24">
+        <div className="grid lg:grid-cols-12 gap-12">
+          {/* Main Achievement Feed */}
+          <div className="lg:col-span-8 space-y-20">
+            <div className="group block relative">
+              <div className="relative aspect-[16/9] mb-8 overflow-hidden bg-zinc-100 border border-zinc-200 shadow-sm">
+                <Image src={mainStory.image} alt="m" fill className="object-cover group-hover:scale-105 transition-all duration-1000 grayscale hover:grayscale-0" sizes="70vw" priority />
+                <div className="absolute bottom-10 left-10 bg-white/95 backdrop-blur-md p-8 shadow-2xl max-w-lg border-l-4 border-primary">
+                   <Award className="w-8 h-8 text-primary mb-6" />
+                   <h2 className="text-3xl md:text-4xl font-black tracking-tight leading-tight uppercase group-hover:text-primary transition-colors">
+                     {mainStory.headline}
                    </h2>
-                   
-                   <p className="text-zinc-500 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
-                        {item.description}
-                   </p>
-                   
-                   <button className="flex items-center gap-3 text-zinc-950 font-black text-xs uppercase tracking-widest group/btn hover:text-indigo-600 transition-colors">
-                        View Honors <div className="bg-zinc-950 p-2 rounded-full group-hover/btn:bg-indigo-600 transition-colors">
-                            <ArrowRight className="w-4 h-4 text-white" />
-                        </div>
-                   </button>
                 </div>
               </div>
-            ))}
+              <p className="text-xl text-zinc-600 leading-relaxed max-w-3xl mb-10">
+                {mainStory.description}
+              </p>
+              <div className="flex items-center gap-6 text-zinc-400">
+                 <button className="flex items-center gap-2 hover:text-primary transition-colors text-[11px] font-black uppercase tracking-wider"><Star className="w-4 h-4" /> Top Honor</button>
+                 <button className="flex items-center gap-2 hover:text-primary transition-colors text-[11px] font-black uppercase tracking-wider"><Share2 className="w-4 h-4" /> Share Success</button>
+              </div>
+            </div>
+
+            <div className="h-px bg-zinc-100 w-full" />
+
+            {/* List View */}
+            <div className="grid md:grid-cols-3 gap-10">
+               {highlights.map((item, i) => (
+                 <div key={i} className="group cursor-pointer">
+                    <div className="aspect-[3/4] relative mb-6 overflow-hidden bg-zinc-100 border border-zinc-200">
+                       <Image src={item.image} alt="a" fill className="object-cover group-hover:scale-110 transition-transform duration-1000 grayscale hover:grayscale-0" sizes="30vw" />
+                       <div className="absolute top-4 right-4 w-8 h-8 bg-white/90 backdrop-blur flex items-center justify-center rounded-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                          <Award className="w-4 h-4 text-primary" />
+                       </div>
+                    </div>
+                    <h3 className="text-sm font-black uppercase tracking-tight leading-tight group-hover:text-primary transition-colors">{item.headline}</h3>
+                 </div>
+               ))}
+            </div>
+          </div>
+
+          {/* Wall of Recognition Sidebar */}
+          <div className="lg:col-span-4 space-y-12">
+            <div className="border-t-2 border-zinc-950 pt-6">
+              <h3 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-950 mb-10 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4" /> Recent Citations
+              </h3>
+              <div className="space-y-12">
+                {wallOfFame.map((item, i) => (
+                  <Link key={i} href="#" className="block group border-b border-zinc-100 pb-8 last:border-0 last:pb-0">
+                    <div className="flex items-baseline gap-4 mb-3">
+                       <span className="text-primary font-black italic text-xs tracking-widest">2024</span>
+                       <div className="h-px flex-grow bg-zinc-100" />
+                    </div>
+                    <h4 className="text-md font-bold leading-tight text-zinc-900 group-hover:text-primary group-hover:underline underline-offset-4 transition-all">
+                      {item.headline}
+                    </h4>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="sticky top-24 bg-zinc-950 text-white p-10 shadow-2xl border-l-4 border-primary">
+               <h4 className="text-zinc-500 font-black uppercase text-[10px] tracking-[0.3em] mb-6">Alumni Network</h4>
+               <h3 className="text-2xl font-black tracking-tighter leading-tight mb-8">Join the Ranks of Industry Leaders</h3>
+               <p className="text-zinc-400 text-sm leading-relaxed mb-10 font-medium italic underline decoration-zinc-800">The School of Media and Humanities has produced visionary storytellers for over two decades.</p>
+               <button className="w-full bg-primary text-white font-black uppercase text-[11px] tracking-widest py-4 hover:bg-white hover:text-zinc-950 transition-all shadow-xl">Contact Success Hub</button>
+            </div>
           </div>
         </div>
-      </section>
-
-      {/* Stat Section */}
-      <section className="bg-indigo-600 py-24 md:py-32 overflow-hidden relative">
-          <div className="container mx-auto px-4 text-center relative z-10">
-              <h3 className="text-white text-3xl md:text-6xl font-black uppercase tracking-tighter mb-12">Building a Legacy of Excellence</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-5xl mx-auto">
-                  <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
-                      <p className="text-4xl md:text-6xl text-white font-black mb-2">50+</p>
-                      <p className="text-indigo-100 text-[10px] font-black uppercase tracking-widest">Global Awards</p>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
-                      <p className="text-4xl md:text-6xl text-white font-black mb-2">20</p>
-                      <p className="text-indigo-100 text-[10px] font-black uppercase tracking-widest">Industry Majors</p>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
-                      <p className="text-4xl md:text-6xl text-white font-black mb-2">100%</p>
-                      <p className="text-indigo-100 text-[10px] font-black uppercase tracking-widest">Placement Record</p>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
-                      <p className="text-4xl md:text-6xl text-white font-black mb-2">10+</p>
-                      <p className="text-indigo-100 text-[10px] font-black uppercase tracking-widest">Research Labs</p>
-                  </div>
-              </div>
-          </div>
-      </section>
+      </main>
     </div>
   );
 }
