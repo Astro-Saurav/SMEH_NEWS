@@ -6,7 +6,7 @@ A full-stack Content Management System (CMS) and Customer Relationship Managemen
 
 ## Overview
 
-Manav Rachna Time is a modern, modular web application designed to handle digital content publishing. It provides a robust backend API for managing articles, media, and user roles, a Next.js-based frontend for content consumption, and a dedicated React-based Admin CRM for administrative operations.
+Manav Rachna Time is a modern, modular web application designed to handle digital content publishing. It provides a reliable backend API for managing articles, media, and user roles, a Next.js-based frontend for content consumption, and a dedicated React-based Admin CRM for administrative operations.
 
 The system solves the problem of managing editorial workflows by offering role-based access control, article revision history, automated media processing, and configurable homepage layouts, all deployed via a scalable infrastructure.
 
@@ -55,10 +55,10 @@ The system solves the problem of managing editorial workflows by offering role-b
 
 ## Screenshots
 
-- **Homepage**: ![Homepage](https://github.com/Astro-Saurav/SMEH_NEWS/blob/808d083d20ef64f17abc6ae7f559f2b9e50f5c91/screenshort/home.png)
-- **Article Page**: ![Article Page](https://github.com/Astro-Saurav/SMEH_NEWS/blob/808d083d20ef64f17abc6ae7f559f2b9e50f5c91/screenshort/news_management.png)
-- **Admin Dashboard**: ![Admin Dashboard](https://github.com/Astro-Saurav/SMEH_NEWS/blob/808d083d20ef64f17abc6ae7f559f2b9e50f5c91/screenshort/admin.png)
-- **Article Editor**: ![Article Editor](https://github.com/Astro-Saurav/SMEH_NEWS/blob/808d083d20ef64f17abc6ae7f559f2b9e50f5c91/screenshort/Article.png)
+- **Homepage**: ![Homepage](screenshort/home.png)
+- **Article Page**: ![Article Page](screenshort/news_management.png)
+- **Admin Dashboard**: ![Admin Dashboard](screenshort/admin.png)
+- **Article Editor**: ![Article Editor](screenshort/Article.png)
 
 ---
 
@@ -162,7 +162,7 @@ Authorization is enforced via Basic Role-Based Access Control (RBAC):
 - **Helmet**: Secures Express apps by setting various HTTP headers.
 - **Rate Limiting**: `express-rate-limit` prevents brute-force attacks globally, alongside strict Nginx limits on authentication routes.
 - **Failed Login Lockout**: Tracks failed attempts and locks accounts temporarily to mitigate credential stuffing.
-- **Input Sanitization**: Utilizes `sanitize-html` to clean request bodies and prevent XSS injections.
+- **Input Sanitization**: Uses `sanitize-html` to clean request bodies and prevent XSS injections.
 - **Secure Cookies**: Refresh tokens are stored securely to mitigate XSS exposure.
 - **Password Hashing**: Passwords are cryptographically hashed using bcrypt with configurable salt rounds.
 
@@ -185,7 +185,7 @@ The application is configured for deployment on a Virtual Private Server (VPS) u
 1. **Version Control**: Code is pushed to GitHub.
 2. **CI/CD**: GitHub Actions workflows trigger builds and deployments for the Backend (Azure) and Admin CRM (Vercel).
 3. **Process Management**: On a VPS, PM2 manages the Node.js processes. `ecosystem.config.js` defines:
-   - `mrt-api`: Express API running in cluster mode to utilize all CPU cores.
+   - `mrt-api`: Express API running in cluster mode to use all CPU cores.
    - `mrt-workers`: Background job processors running in fork mode.
    - `mrt-frontend`: Next.js frontend serving the consumer site.
 4. **Proxy**: Nginx listens on port 80/443, handling SSL termination and proxying traffic to the respective PM2-managed services.
@@ -254,7 +254,7 @@ Environment variables are required for the backend API. Configure these in `back
 
 ## Database
 
-The system utilizes Prisma ORM. The primary entities are:
+The system uses Prisma ORM. The primary entities are:
 
 - **User / Role / Permission**: Manages authentication and basic roles.
 - **News / NewsRevision**: Stores articles, metadata, SEO fields, and a history of edits (revisions). Related to `User` (Author/Editor) and `Category`.
@@ -313,4 +313,4 @@ The system utilizes Prisma ORM. The primary entities are:
 
 ## License
 
-*(Refer to the repository's LICENSE file for details on usage and distribution rights.)*
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -105,7 +105,7 @@ export default function EditNewsPage() {
       const token = cacheManager.getAccessToken()
       if (!token) throw new Error('Not authenticated')
 
-      let thumbnailMediaId = formData.thumbnail_media_id;
+      let thumbnailMediaId: string | undefined = undefined;
       const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
       if (fileInput && fileInput.files && fileInput.files[0]) {
         const formDataUpload = new FormData();

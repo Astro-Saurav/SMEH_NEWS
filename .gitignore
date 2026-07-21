@@ -56,3 +56,8 @@ auto_deploy.sh
 
 *.db
 *.sqlite
+
+# Local Campaign and PDF assets
+campaign/
+screenshort/project_showcase.pdf
+
