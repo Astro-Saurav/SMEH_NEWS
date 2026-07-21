@@ -55,13 +55,10 @@ The system solves the problem of managing editorial workflows by offering role-b
 
 ## Screenshots
 
-*(Placeholders for future screenshots)*
-
-- **Homepage**: `![Homepage](./docs/screenshots/homepage.png)`
-- **Article Page**: `![Article Page](./docs/screenshots/article.png)`
-- **Admin Dashboard**: `![Admin Dashboard](./docs/screenshots/admin-dashboard.png)`
-- **Article Editor**: `![Article Editor](./docs/screenshots/article-editor.png)`
-- **Mobile View**: `![Mobile View](./docs/screenshots/mobile-view.png)`
+- **Homepage**: ![Homepage](https://github.com/Astro-Saurav/SMEH_NEWS/blob/808d083d20ef64f17abc6ae7f559f2b9e50f5c91/screenshort/home.png)
+- **Article Page**: ![Article Page](https://github.com/Astro-Saurav/SMEH_NEWS/blob/808d083d20ef64f17abc6ae7f559f2b9e50f5c91/screenshort/news_management.png)
+- **Admin Dashboard**: ![Admin Dashboard](https://github.com/Astro-Saurav/SMEH_NEWS/blob/808d083d20ef64f17abc6ae7f559f2b9e50f5c91/screenshort/admin.png)
+- **Article Editor**: ![Article Editor](https://github.com/Astro-Saurav/SMEH_NEWS/blob/808d083d20ef64f17abc6ae7f559f2b9e50f5c91/screenshort/Article.png)
 
 ---
 
