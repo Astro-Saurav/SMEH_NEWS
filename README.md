@@ -6,7 +6,7 @@ A full-stack Content Management System (CMS) and Customer Relationship Managemen
 
 ## Overview
 
-Manav Rachna Time is a modern, modular web application designed to handle digital content publishing. It provides a reliable backend API for managing articles, media, and user roles, a Next.js-based frontend for content consumption, and a dedicated React-based Admin CRM for administrative operations.
+SMEH_NEWS is a modern, modular web application designed to handle digital content publishing. It provides a reliable backend API for managing articles, media, and user roles, a Next.js-based frontend for content consumption, and a dedicated React-based Admin CRM for administrative operations.
 
 The system solves the problem of managing editorial workflows by offering role-based access control, article revision history, automated media processing, and configurable homepage layouts, all deployed via a scalable infrastructure.
 
