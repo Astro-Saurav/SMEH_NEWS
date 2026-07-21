@@ -1,4 +1,4 @@
-# Manav Rachna Time
+# SMEH_NEWS
 
 A full-stack Content Management System (CMS) and Customer Relationship Management (CRM) platform built for content publishing, media management, and administrative control.
 
